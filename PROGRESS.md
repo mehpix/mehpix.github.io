@@ -2,6 +2,18 @@
 
 ### [2026-11-10 - Mehbur07]
 - **Yapılanlar & Kararlar:**
+  - PR #7 merge edildi, Faz 7 yayında; canlı sitede favicon, PyAI logosu, og-image, sitemap ve robots.txt doğrulandı
+  - Edge sekmede hâlâ küre gösterdi (favicon önbelleği). `fix/favicon-cache`: ikon adreslerine `?v=2` eki (`ICON_VERSION`, `app/root.tsx`); ikon değişirse bu sayı artırılmalı
+- **Son Commit:** bd9e3ca Merge pull request #7 from mehpix/chore/launch-polish
+- **Aktif Branch:** main
+- **Sıradaki İlk İş (Next Action):** Kullanıcı sekmede MPX ikonunu gördüğünü doğrulasın; onaylarsa v1.0.0 tag'i + CHANGELOG sürüm başlığı + GitHub Release
+- **Bilinen Sorunlar / Dikkat Edilmesi Gerekenler:**
+  - PyAI logosunun arka planında anlamsız komutlar var (`Clown`, `Get-Malggle`); istenirse temiz sürümle değiştirilecek
+  - Dependabot: minimatch (orta) — yalnızca ESLint geliştirme aracında
+  - `.vscode/settings.json` takip edilmiyor (kullanıcının editör ayarı)
+
+### [2026-11-10 - Mehbur07]
+- **Yapılanlar & Kararlar:**
   - Faz 7 (`chore/launch-polish`): favicon + apple-touch-icon (MPX logosu), 1200×630 OG görseli, canonical + hreflang (x-default dahil) + X kartı etiketleri, ana sayfada Organization JSON-LD
   - `scripts/postbuild.ts`: `pnpm build` sonunda sitemap.xml (14 adres, `/tasarim` hariç) ve 404.html üretiliyor; deploy.yml'deki `cp` adımı buraya taşındı. robots.txt eklendi
   - Logolar WebP'ye çevrildi (~2 MB → 5–58 KB); PyAI artık kendi logosunu (`pyai-logo.webp`) kullanıyor, MPX logosu yalnızca ana sayfada

@@ -21,3 +21,4 @@ sürümler [Semantic Versioning](https://semver.org/lang/tr/) kurallarını izle
 - Site içi arama eklendi: menüdeki "Ara" butonu veya ⌘K / Ctrl+K ile sayfalar, projeler ve SSS soruları aranabiliyor; SSS sonuçları ilgili soruyu açık getiriyor.
 - Yayın öncesi cila: favicon ve telefon ikonu, link paylaşımında çıkan önizleme görseli, sitemap.xml, robots.txt ve arama motorları için asıl adres/dil etiketleri eklendi.
 - Logolar WebP'ye çevrilip ~2 MB'tan 60 KB'ın altına indirildi; PyAI kendi logosuna kavuştu, Mehbur07 bağlantısı yeni adresine (mehbur07.github.io) güncellendi.
+- Tarayıcıların eski "ikon yok" kaydını tutup sekmede boş küre göstermesi düzeltildi: ikon adreslerine sürüm eki (`?v=2`) eklendi.
