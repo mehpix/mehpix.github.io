@@ -2,6 +2,20 @@
 
 ### [2026-11-10 - Mehbur07]
 - **Yapılanlar & Kararlar:**
+  - PR #8 (favicon `?v=2`) merge edildi ve yayında
+  - `feature/about-open-source`: Hakkımızda > Hikâyemiz'e 4. paragraf (TR + EN)
+  - Kullanıcı "Projelerimiz açık kaynaklıdır" istedi; PyAI'ın kaynak kodu yayında olmadığı için (mehpix/PyAI'da yalnızca README + Release'te exe) kullanıcının onayıyla doğru ifade seçildi: Quiz açık kaynak (MIT), PyAI ücretsiz indirilebilir
+- **Son Commit:** 44bdf65 Merge pull request #8 from mehpix/fix/favicon-cache
+- **Aktif Branch:** main
+- **Sıradaki İlk İş (Next Action):** Kullanıcı sekmede MPX ikonunu doğrulasın; onaylarsa v1.0.0 tag'i + CHANGELOG sürüm başlığı + GitHub Release
+- **Bilinen Sorunlar / Dikkat Edilmesi Gerekenler:**
+  - PyAI kodu ileride yayınlanırsa (secret taraması + MIT LICENSE) Hakkımızda metni "Projelerimiz açık kaynaklıdır" olarak güncellenebilir
+  - PyAI logosunun arka planında anlamsız komutlar var (`Clown`, `Get-Malggle`)
+  - Dependabot: minimatch (orta) — yalnızca ESLint geliştirme aracında
+  - `.vscode/settings.json` takip edilmiyor (kullanıcının editör ayarı)
+
+### [2026-11-10 - Mehbur07]
+- **Yapılanlar & Kararlar:**
   - PR #7 merge edildi, Faz 7 yayında; canlı sitede favicon, PyAI logosu, og-image, sitemap ve robots.txt doğrulandı
   - Edge sekmede hâlâ küre gösterdi (favicon önbelleği). `fix/favicon-cache`: ikon adreslerine `?v=2` eki (`ICON_VERSION`, `app/root.tsx`); ikon değişirse bu sayı artırılmalı
 - **Son Commit:** bd9e3ca Merge pull request #7 from mehpix/chore/launch-polish

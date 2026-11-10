@@ -476,6 +476,7 @@ export const tr = {
           "MehPiX, 24 Mayıs 2026'da kuruldu. O günden beri tek bir hedef için kod yazıyoruz: insanların işine yarayan, dünyayı değiştirebilecek yazılımlar üretmek.",
           "İlk projemiz PyAI oldu: kurulum gerektirmeyen, sohbetlerinizi kendi bilgisayarınızda saklayan bir sohbet botu. Ardından yazılımı donanımla buluşturduk ve Arduino ile çalışan, LCD ekranlı bir matematik yarışması olan Quiz'i geliştirdik.",
           "Her projede yeni bir şey öğreniyor, öğrendiklerimizi de paylaşıyoruz.",
+          "Paylaşmayı önemsiyoruz: Quiz açık kaynaklıdır; kodu MIT lisansıyla GitHub'da herkese açık. PyAI ise ücretsiz olarak indirilebilir. Tüm projelerimizi GitHub hesabımızdan (github.com/mehpix) takip edebilirsiniz.",
         ],
       },
       facts: [
