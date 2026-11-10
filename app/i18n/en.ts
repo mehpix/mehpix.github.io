@@ -474,6 +474,7 @@ export const en: Dictionary = {
           "MehPiX was founded on 24 May 2026. Since then we have been writing code for one goal: building useful software that could change the world.",
           "Our first project was PyAI, a chatbot that needs no installation and keeps your chats on your own computer. Then we brought software and hardware together and built Quiz, an arithmetic quiz game on Arduino with an LCD screen.",
           "With every project we learn something new, and we share what we learn.",
+          "Sharing matters to us: Quiz is open source, and its code is publicly available on GitHub under the MIT license. PyAI is free to download. You can follow all of our projects on our GitHub account (github.com/mehpix).",
         ],
       },
       facts: [
