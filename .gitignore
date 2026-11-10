@@ -1,0 +1,25 @@
+# Bağımlılıklar
+node_modules/
+.pnpm-store/
+
+# Python (taban liste)
+__pycache__/
+.venv/
+
+# Derleme çıktıları
+dist/
+build/
+
+# Loglar ve sistem dosyaları
+*.log
+.DS_Store
+Thumbs.db
+
+# Ortam değişkenleri (secret'lar asla git'e girmez)
+.env
+.env.*
+!.env.example
+
+# Editör / araç önbellekleri
+.vite/
+.eslintcache

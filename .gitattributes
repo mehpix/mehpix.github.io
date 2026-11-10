@@ -1,0 +1,10 @@
+* text=auto eol=lf
+
+# İkili (binary) dosyalar: satır sonu dönüşümü uygulanmaz
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.zip binary
+*.exe binary
