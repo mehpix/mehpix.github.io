@@ -35,7 +35,11 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm typecheck
+      # İletişim formunun anahtarı repodaki "WEB3FORMS_KEY" secret'ından gelir.
+      # Secret tanımlı değilse form, ziyaretçinin e-posta uygulamasını açar.
       - run: pnpm build
+        env:
+          VITE_WEB3FORMS_KEY: ${{ secrets.WEB3FORMS_KEY }}
 
       # GitHub Pages bilinmeyen adreslerde 404.html gösterir; bunu React Router'ın
       # SPA yedek sayfasıyla değiştirerek 404 ekranını uygulamanın çizmesini sağlarız.
