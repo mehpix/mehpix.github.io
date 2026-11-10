@@ -66,3 +66,49 @@ export const ArrowUpIcon = (p: IconProps) => (
     <path d="M12 19V5M6 11l6-6 6 6" />
   </Base>
 );
+
+export const ArrowDownIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M12 5v14M6 13l6 6 6-6" />
+  </Base>
+);
+
+export const PlusIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M12 5v14M5 12h14" />
+  </Base>
+);
+
+export const MailIcon = (p: IconProps) => (
+  <Base {...p}>
+    <rect x="3" y="5" width="18" height="14" rx="2" />
+    <path d="M3 7l9 6 9-6" />
+  </Base>
+);
+
+// Değerler bölümü ikonları
+export const LockIcon = (p: IconProps) => (
+  <Base {...p}>
+    <rect x="5" y="11" width="14" height="10" rx="2" />
+    <path d="M8 11V7a4 4 0 0 1 8 0v4" />
+  </Base>
+);
+
+export const BoltIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M13 2L4 14h7l-1 8 9-12h-7l1-8Z" />
+  </Base>
+);
+
+export const CompassIcon = (p: IconProps) => (
+  <Base {...p}>
+    <circle cx="12" cy="12" r="9" />
+    <path d="M15.5 8.5l-2 5-5 2 2-5 5-2Z" />
+  </Base>
+);
+
+export const CodeIcon = (p: IconProps) => (
+  <Base {...p}>
+    <path d="M8 7l-5 5 5 5M16 7l5 5-5 5M14 4l-4 16" />
+  </Base>
+);

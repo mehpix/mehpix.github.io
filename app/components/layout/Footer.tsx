@@ -1,7 +1,8 @@
 import { Link } from "react-router";
 
 import { useI18n } from "~/i18n";
-import { pathFor, type PageKey } from "~/lib/paths";
+import { linkFor, type PageKey } from "~/lib/paths";
+import { LINKS } from "~/lib/site";
 
 import { ArrowUpIcon, ArrowUpRightIcon } from "../icons";
 import { Container } from "../ui/Container";
@@ -12,15 +13,15 @@ const SITE_LINKS = ["projects", "about", "faq", "contact"] as const satisfies re
 
 // Dış bağlantılar (yeni sekmede açılır).
 const EXTERNAL_LINKS = [
-  { label: "MicroCore", href: "https://microcore.lovable.app/" },
-  { label: "Mehbur07", href: "https://mehbur07.lovable.app/" },
-  { label: "GitHub", href: "https://github.com/mehpix" },
+  { label: "MicroCore", href: LINKS.microcore },
+  { label: "Mehbur07", href: LINKS.mehbur07 },
+  { label: "GitHub", href: LINKS.github },
 ] as const;
 
 /** Sayfa altı: logo, kısa tanıtım, canlı saat, bağlantı sütunları ve telif satırı. */
 export function Footer() {
   const { lang, t } = useI18n();
-  const projects = pathFor("projects", lang);
+  const projects = linkFor("projects", lang);
 
   return (
     <footer className="relative mt-24 border-t border-line bg-surface/50">
@@ -39,7 +40,7 @@ export function Footer() {
         <FooterColumn title={t.footer.site}>
           {SITE_LINKS.map((page) => (
             <li key={page}>
-              <Link to={pathFor(page, lang)} className="text-muted transition-colors hover:text-accent">
+              <Link to={linkFor(page, lang)} className="text-muted transition-colors hover:text-accent">
                 {t.nav[page]}
               </Link>
             </li>

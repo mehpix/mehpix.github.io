@@ -10,7 +10,12 @@ export const DEFAULT_LANG: Lang = "tr";
 
 // Sözlük tipi Türkçe metinlerden türetilir; metin değerleri "string" olarak
 // genişletilir ki İngilizce sözlük aynı yapıya farklı metinlerle uyabilsin.
-type Widen<T> = { [K in keyof T]: T[K] extends string ? string : Widen<T[K]> };
+// Listeler (örn. kayan yazı kelimeleri, SSS) iki dilde farklı uzunlukta olabilir.
+type Widen<T> = T extends string
+  ? string
+  : T extends readonly (infer U)[]
+    ? readonly Widen<U>[]
+    : { [K in keyof T]: Widen<T[K]> };
 export type Dictionary = Widen<typeof tr>;
 
 const dictionaries: Record<Lang, Dictionary> = { tr, en };

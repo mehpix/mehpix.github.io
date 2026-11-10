@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router";
 
 import { useI18n } from "~/i18n";
-import { isActive, pathFor, type PageKey } from "~/lib/paths";
+import { isActive, linkFor, type PageKey } from "~/lib/paths";
 
 import { CloseIcon, MenuIcon } from "../icons";
 import { ButtonLink } from "../ui/Button";
@@ -30,7 +30,7 @@ export function Navbar() {
 
   const links = NAV_ITEMS.map((page) => ({
     page,
-    href: pathFor(page, lang),
+    href: linkFor(page, lang),
     label: t.nav[page],
     active: isActive(page, pathname),
   }));
@@ -66,7 +66,7 @@ export function Navbar() {
           <ThemeToggle />
           {/* Butonun kendi "inline-flex" sınıfı "hidden"ı ezmesin diye ayrı kapsayıcıda gizlenir */}
           <div className="hidden md:block">
-            <ButtonLink href={pathFor("contact", lang)} size="sm">
+            <ButtonLink href={linkFor("contact", lang)} size="sm">
               {t.nav.cta}
             </ButtonLink>
           </div>
@@ -112,7 +112,7 @@ export function Navbar() {
           </nav>
           <div className="mt-4 flex items-center justify-between gap-3 border-t border-line pt-4">
             <LangSwitch />
-            <ButtonLink href={pathFor("contact", lang)} size="sm" onClick={() => setOpen(false)}>
+            <ButtonLink href={linkFor("contact", lang)} size="sm" onClick={() => setOpen(false)}>
               {t.nav.cta}
             </ButtonLink>
           </div>
