@@ -8,19 +8,19 @@ import { pathFor } from "~/lib/paths";
 import { ArrowLeftIcon, DownloadIcon } from "../icons";
 import { ProjectStatusBadge } from "../ProjectList";
 import { Badge } from "../ui/Badge";
-import { Button } from "../ui/Button";
+import { buttonClasses, ButtonLink } from "../ui/Button";
 import { Card } from "../ui/Card";
 import { Container } from "../ui/Container";
 
-/** Projenin sabit bilgilerini (görsel, durum, teknoloji) anahtarıyla bulur. */
+/** Projenin sabit bilgilerini (görsel, durum, teknoloji, indirme) anahtarıyla bulur. */
 export function getProject(key: ProjectKey) {
   return PROJECTS.find((p) => p.key === key)!;
 }
 
 /**
  * Proje sayfasının üst kısmı: "Tüm projeler" bağlantısı, başlık, durum,
- * etiketler, kısa açıklama, indirme butonu ve proje görseli.
- * İndirmeler Faz 5'te bağlanacak; o zamana kadar buton pasif durur.
+ * etiketler, kısa açıklama, indirme ve GitHub butonları ve proje görseli.
+ * Dosya, projenin GitHub Releases sayfasından iner (yeni sekme açılmaz).
  */
 export function ProjectHero({ projectKey }: { projectKey: ProjectKey }) {
   const { lang, t } = useI18n();
@@ -55,11 +55,17 @@ export function ProjectHero({ projectKey }: { projectKey: ProjectKey }) {
             ))}
           </div>
           <p className="mt-6 max-w-xl text-lg text-muted">{copy.body}</p>
-          <div className="mt-8">
-            <Button size="lg" disabled>
-              <DownloadIcon /> {p.downloadSoon}
-            </Button>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href={project.download.url} className={buttonClasses({ size: "lg" })}>
+              <DownloadIcon /> {p.download}
+            </a>
+            <ButtonLink href={project.repo} variant="outline" size="lg">
+              {p.viewSource}
+            </ButtonLink>
           </div>
+          <p className="mt-3 font-mono text-xs text-muted">
+            v{project.download.version} · {project.download.file} · {project.download.size}
+          </p>
         </div>
         <img
           src={project.image}
@@ -129,5 +135,36 @@ export function FactList({ title, items }: { title: string; items: readonly { la
         ))}
       </dl>
     </Card>
+  );
+}
+
+/** Dikkat çekilmesi gereken kısa not (örn. Windows SmartScreen uyarısı). */
+export function Notice({ title, children }: { title: string; children: ReactNode }) {
+  return (
+    <div className="rounded-2xl border border-warning/40 bg-warning/10 p-5 sm:p-6">
+      <h2 className="font-bold text-warning">{title}</h2>
+      <div className="mt-2 text-sm leading-relaxed text-fg/90">{children}</div>
+    </div>
+  );
+}
+
+/**
+ * Dosya doğrulama: indirilen dosyanın SHA-256 değerini PowerShell ile
+ * hesaplayıp sayfadakiyle karşılaştırma talimatı.
+ */
+export function VerifyDownload({ projectKey }: { projectKey: ProjectKey }) {
+  const { t } = useI18n();
+  const { download } = getProject(projectKey);
+  const v = t.pages.project.verify;
+  return (
+    <DetailBlock id="dogrulama" title={v.title} subtitle={v.body}>
+      <pre className="overflow-x-auto rounded-xl border border-line bg-surface-2 px-4 py-3 font-mono text-sm text-fg">
+        <code>{`Get-FileHash .\\${download.file} -Algorithm SHA256`}</code>
+      </pre>
+      <p className="mt-4 text-sm text-muted">{v.expected}</p>
+      <p className="mt-1 rounded-xl border border-line bg-surface px-4 py-3 font-mono text-xs break-all text-accent">
+        {download.sha256}
+      </p>
+    </DetailBlock>
   );
 }

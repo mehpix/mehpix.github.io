@@ -19,7 +19,7 @@ Kimlik (neon tema, logo, metinler) MehPiX'e ait kalır; sahte yorum veya şişir
 | ✅ **2. Tasarım sistemi** | Neon camgöbeği renk paleti, fontlar, koyu/açık tema, ortak bileşenler (menü, canlı saatli footer, buton, kart, "01 / 02" bölüm başlığı) | Sitenin görsel dili hazır | `feature/design-system` |
 | ✅ **3. Ana sayfa** | Hero, kayan yazı şeridi, projeler, değerler, gerçek rakamlarla sayaçlar, yol haritası, iş birlikleri, kişisel siteler, SSS, çağrı bandı | MicroCore düzeninde ana sayfa | `feature/home-page` |
 | ✅ **4. Alt sayfalar** | `/projeler` (filtreli), `/projeler/pyai`, `/projeler/quiz`, `/hakkimizda`, `/iletisim` (çalışan form), `/sss`, 404 + `/en/...` karşılıkları | Çok sayfalı, iki dilli site | `feature/pages` |
-| **5. İndirmeler** | PyAI.exe ve Quiz.zip (Quiz.ino + devre şeması) GitHub Releases'e; "İndir" butonları bağlanır | İndirmeler çalışıyor | `feature/downloads` |
+| ✅ **5. İndirmeler** | PyAI.exe ve Quiz.zip (Quiz.ino + devre şeması) GitHub Releases'e; "İndir" butonları bağlanır | İndirmeler çalışıyor | `feature/downloads` |
 | **6. Arama** | ⌘K / Ctrl+K arama penceresi (sayfalar, projeler, SSS); tarayıcıda çalışır | Arama hazır | `feature/search` |
 | **7. Cila ve yayın** | SEO (meta, OG görseli, sitemap), mobil, erişilebilirlik, performans, görsel optimizasyonu | **v1.0.0** | `chore/launch-polish` |
 
@@ -34,12 +34,12 @@ Her faz kendi branch'inde yapılır ve Pull Request ile `main`'e girer.
 | MicroCore logosu | `public/images/microcore-logo.png` | Düşük çözünürlük (~165 px); büyüğü gelirse değişecek |
 | Quiz logosu | `public/images/quiz-logo.jpg` | Projeler: Quiz (Arduino) |
 | Quiz bağlantı tablosu | `public/images/quiz-baglanti-tablosu.png` | Sitede HTML tablo olarak da gösterilecek |
-| PyAI.exe | `projelerim/Py/PyAI/PyAI.exe` (~9 MB) | GitHub Releases; imzasız, SmartScreen uyarısı notu eklenecek |
-| Quiz.ino | `projelerim/C++/Quiz.ino` | Zip: Quiz.ino + bağlantı tablosu görseli + `BAGLANTI.md` |
+| PyAI.exe | `projelerim/Py/PyAI/PyAI.exe` (~9 MB) | [mehpix/PyAI](https://github.com/mehpix/PyAI) Releases v1.0.0; imzasız, SmartScreen notu sitede ve README'de |
+| Quiz.ino | `projelerim/C++/Quiz.ino` | [mehpix/Quiz](https://github.com/mehpix/Quiz) (MIT); Releases v1.0.0'da `Quiz.zip` |
 
 ## Açık kararlar
 
-- **İletişim formu:** Web3Forms anahtarı kullanıcı tarafından alınıp `WEB3FORMS_KEY` GitHub secret'ı olarak eklenecek. Eklenene kadar form e-posta uygulamasını açar.
-- **Faz 5:** İndirmeler için ayrı repolar önerisi (`mehpix/PyAI`, `mehpix/Quiz`) — onay bekliyor.
-- **Faz 5:** `Quiz.ino` 247. satırda `soruaktif` yazım hatası var (doğrusu `soruAktif`); bu haliyle derlenmez. Zip'e konmadan önce düzeltilmeli. Kullanılmayan `Adafruit_SSD1306.h` / `splash.h` satırları da gereksiz kütüphane kurulumu istiyor.
+- ✅ İletişim formu: `WEB3FORMS_KEY` GitHub secret'ı eklendi; form doğrudan e-posta gönderiyor.
+- ✅ İndirmeler ayrı repolarda (`mehpix/PyAI`, `mehpix/Quiz`); Quiz MIT lisanslı, PyAI tüm hakları saklı.
+- ✅ `Quiz.ino` yazım hatası (`soruaktif` → `soruAktif`) ve kullanılmayan include'lar hem orijinalde hem repoda düzeltildi. Arduino derleyicisi bilgisayarda kurulu olmadığı için derleme kontrolü yapılamadı.
 - ✅ Bağlantı tablosundaki "Dijital Pin 11 (mz_ak)" `Quiz.ino` ile doğrulandı (`#define mz_ak 11`, müzik açma/kapama).
