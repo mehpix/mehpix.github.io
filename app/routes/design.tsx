@@ -9,16 +9,14 @@ import { Card } from "~/components/ui/Card";
 import { Container } from "~/components/ui/Container";
 import { SectionHeader } from "~/components/ui/SectionHeader";
 import { getDictionary, getLang, useI18n } from "~/i18n";
+import { pageMeta } from "~/lib/meta";
 import { pathFor } from "~/lib/paths";
 
 // Bu sayfa geliştirme amaçlı bir vitrindir; arama motorlarında listelenmez.
 export function meta({ location }: Route.MetaArgs) {
-  const { design } = getDictionary(getLang(location.pathname));
-  return [
-    { title: design.meta.title },
-    { name: "description", content: design.meta.description },
-    { name: "robots", content: "noindex, nofollow" },
-  ];
+  const lang = getLang(location.pathname);
+  const { design } = getDictionary(lang);
+  return pageMeta({ page: "design", lang, ...design.meta, noindex: true });
 }
 
 // Paletteki renkler: CSS değişken adı ve Tailwind sınıfı.

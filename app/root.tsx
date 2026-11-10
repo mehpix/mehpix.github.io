@@ -13,6 +13,8 @@ import "./app.css";
 import { getLang, useI18n } from "./i18n";
 import { pathFor } from "./lib/paths";
 import { themeInitScript } from "./lib/theme";
+import { Footer } from "./components/layout/Footer";
+import { Navbar } from "./components/layout/Navbar";
 import { ButtonLink } from "./components/ui/Button";
 
 // Tüm sayfaları saran HTML iskeleti. <html lang> değeri adrese göre
@@ -46,23 +48,47 @@ export default function App() {
   return <Outlet />;
 }
 
+// 404 ekranında önerilen sayfalar
+const SUGGESTED = ["projects", "about", "faq", "contact"] as const;
+
 // Bulunamayan sayfalar (404) ve beklenmeyen hatalar burada gösterilir.
+// Ziyaretçi kaybolmasın diye menü ve footer da gösterilir.
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
   const { lang, t } = useI18n();
   const is404 = isRouteErrorResponse(error) && error.status === 404;
   const copy = is404 ? t.notFound : t.error;
 
   return (
-    <main className="mx-auto flex min-h-dvh max-w-xl flex-col items-center justify-center gap-4 px-4 text-center">
+    <div id="top" className="flex min-h-dvh flex-col">
       <title>{`${copy.title} — MehPiX`}</title>
-      <p className="font-mono text-6xl font-bold text-accent neon-text">
-        {is404 ? "404" : "ERROR"}
-      </p>
-      <h1 className="text-3xl font-bold">{copy.title}</h1>
-      <p className="text-muted">{copy.body}</p>
-      <ButtonLink href={pathFor("home", lang)} variant="outline" className="mt-2">
-        {t.notFound.home}
-      </ButtonLink>
-    </main>
+      <meta name="robots" content="noindex" />
+      <Navbar />
+      <main id="icerik" className="relative flex flex-1 items-center overflow-hidden">
+        <div aria-hidden className="bg-grid pointer-events-none absolute inset-0" />
+        <div className="relative mx-auto flex max-w-xl flex-col items-center gap-4 px-4 py-24 text-center">
+          <p className="font-mono text-7xl font-bold text-accent neon-text">{is404 ? "404" : "ERROR"}</p>
+          <h1 className="text-3xl font-bold">{copy.title}</h1>
+          <p className="text-muted">{copy.body}</p>
+          <ButtonLink href={pathFor("home", lang)} className="mt-2">
+            {t.notFound.home}
+          </ButtonLink>
+          {is404 && (
+            <nav aria-label={t.notFound.links} className="mt-6">
+              <p className="text-sm text-muted">{t.notFound.links}</p>
+              <ul className="mt-3 flex flex-wrap justify-center gap-2">
+                {SUGGESTED.map((page) => (
+                  <li key={page}>
+                    <ButtonLink href={pathFor(page, lang)} variant="outline" size="sm">
+                      {t.nav[page]}
+                    </ButtonLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          )}
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
 }

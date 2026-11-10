@@ -1,5 +1,5 @@
 import { useI18n } from "~/i18n";
-import { HOME_SECTIONS, linkFor } from "~/lib/paths";
+import { HOME_SECTIONS, pathFor } from "~/lib/paths";
 import { CONTACT_EMAIL } from "~/lib/site";
 
 import { ArrowRightIcon, MailIcon } from "../icons";
@@ -32,7 +32,7 @@ export function CtaBand() {
             <ButtonLink href={`mailto:${CONTACT_EMAIL}`} size="lg">
               <MailIcon /> {s.mail}
             </ButtonLink>
-            <ButtonLink href={linkFor("projects", lang)} variant="outline" size="lg">
+            <ButtonLink href={pathFor("projects", lang)} variant="outline" size="lg">
               {s.projects} <ArrowRightIcon />
             </ButtonLink>
           </div>

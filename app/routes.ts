@@ -17,6 +17,12 @@ export default [
   layout("routes/_site.tsx", [
     index("routes/home.tsx", { id: "home-tr" }),
     route("en", "routes/home.tsx", { id: "home-en" }),
+    ...localized("projects", "routes/projects.tsx"),
+    ...localized("projectPyai", "routes/project-pyai.tsx"),
+    ...localized("projectQuiz", "routes/project-quiz.tsx"),
+    ...localized("about", "routes/about.tsx"),
+    ...localized("contact", "routes/contact.tsx"),
+    ...localized("faq", "routes/faq.tsx"),
     ...localized("design", "routes/design.tsx"),
   ]),
 ] satisfies RouteConfig;

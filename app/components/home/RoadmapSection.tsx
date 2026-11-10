@@ -18,7 +18,7 @@ function toStatus(value: string): Status {
 }
 
 /** "Yol Haritası / 04": dikey zaman çizelgesi. */
-export function RoadmapSection() {
+export function RoadmapSection({ index = "04" }: { index?: string }) {
   const { t } = useI18n();
   const s = t.home.roadmap;
 
@@ -29,7 +29,7 @@ export function RoadmapSection() {
           <SectionHeader
             id="yol-haritasi-baslik"
             eyebrow={s.eyebrow}
-            index="04"
+            index={index}
             title={s.title}
             subtitle={s.subtitle}
           />
