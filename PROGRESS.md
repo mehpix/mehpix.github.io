@@ -2,6 +2,21 @@
 
 ### [2026-11-10 - Mehbur07]
 - **Yapılanlar & Kararlar:**
+  - Faz 4 (`feature/pages`): `/projeler` (Uygulama/Donanım filtresi), `/projeler/pyai`, `/projeler/quiz`, `/hakkimizda`, `/iletisim`, `/sss` + `/en/...` karşılıkları; toplam 16 sayfa prerender ediliyor
+  - Faz 3'teki `linkFor`/`READY_PAGES` geçici yönlendirmesi kaldırıldı; menü artık gerçek sayfalara gidiyor. Detay sayfalarında menüde "Projeler" aktif görünüyor
+  - SSS tek kaynakta (`faq.groups`); ana sayfa her grubun ilk sorusunu gösteriyor. Sayfa meta bilgileri `app/lib/meta.ts` ile (OG + hreflang)
+  - İletişim formu Web3Forms'a gönderiyor; anahtar `VITE_WEB3FORMS_KEY` (.env) / `WEB3FORMS_KEY` (GitHub secret). Anahtar yoksa mailto'ya düşüyor. `.env.example` eklendi
+  - Quiz içeriği `Quiz.ino`'dan doğrulandı: dört işlem, 20 sn, 10 puan, D2 kısa=pas / 3 sn=duraklat, D11 müzik, 100 soru. "Bilgi yarışması" → "matematik yarışması"
+- **Son Commit:** 4180d78 Merge pull request #3 from mehpix/feature/home-page
+- **Aktif Branch:** main
+- **Sıradaki İlk İş (Next Action):** Faz 5 — `feature/downloads`: önce `Quiz.ino` yazım hatasının nasıl düzeltileceğini ve ayrı repo önerisini kullanıcıya sor
+- **Bilinen Sorunlar / Dikkat Edilmesi Gerekenler:**
+  - `WEB3FORMS_KEY` secret'ı henüz eklenmedi; form şimdilik e-posta uygulamasını açıyor
+  - `Quiz.ino` 247. satır: `soruaktif` → `soruAktif` (derleme hatası); dosya repo dışında, dokunulmadı
+  - `vite preview` sonunda "/" olmayan adreslerde ana sayfayı veriyor (yalnızca yerel önizleme; GitHub Pages "/" ekleyerek yönlendiriyor)
+
+### [2026-11-10 - Mehbur07]
+- **Yapılanlar & Kararlar:**
   - Faz 3 (`feature/home-page`): ana sayfa menü + footer düzenine alındı; bölümler `app/components/home/` altında (Hero, Marquee, Projeler, Değerler, Sayaçlar, Yol Haritası, Bağlantılar, SSS, CTA bandı)
   - Menüdeki henüz yapılmamış sayfalar `linkFor` ile ana sayfadaki bölüme yönleniyor (`/#projeler`, `/#hakkimizda`, `/#sss`, `/#iletisim`); Faz 4'te `READY_PAGES` listesine eklenecek
   - Sayaçlar gerçek rakamlar: 2 proje, 2 programlama dili, 1 iş birliği, 2026 kuruluş. Sayma efekti yalnızca tarayıcıda; prerender HTML'de gerçek değer var

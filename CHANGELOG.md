@@ -15,3 +15,5 @@ sürümler [Semantic Versioning](https://semver.org/lang/tr/) kurallarını izle
 - Bileşenlerin görülebildiği `/tasarim` vitrin sayfası eklendi; ana sayfaya tema ve dil düğmeleri geldi.
 - "Yapım aşamasında" sayfasının yerine gerçek ana sayfa geldi: projeler, değerler, gerçek rakamlı sayaçlar, yol haritası, iş birlikleri, SSS ve iletişim bandı.
 - Henüz yapılmamış sayfalara giden menü bağlantıları artık 404 yerine ana sayfadaki ilgili bölüme gidiyor.
+- Projeler (filtreli), PyAI, Quiz (oynanış, parça listesi, bağlantı tablosu), Hakkımızda, İletişim (form) ve SSS sayfaları Türkçe ve İngilizce olarak eklendi.
+- 404 ekranı menü, footer ve önerilen sayfa bağlantılarıyla yenilendi; Quiz açıklaması kodla uyumlu olacak şekilde "matematik yarışması" olarak düzeltildi.
