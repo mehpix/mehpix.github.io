@@ -20,7 +20,7 @@ Kimlik (neon tema, logo, metinler) MehPiX'e ait kalır; sahte yorum veya şişir
 | ✅ **3. Ana sayfa** | Hero, kayan yazı şeridi, projeler, değerler, gerçek rakamlarla sayaçlar, yol haritası, iş birlikleri, kişisel siteler, SSS, çağrı bandı | MicroCore düzeninde ana sayfa | `feature/home-page` |
 | ✅ **4. Alt sayfalar** | `/projeler` (filtreli), `/projeler/pyai`, `/projeler/quiz`, `/hakkimizda`, `/iletisim` (çalışan form), `/sss`, 404 + `/en/...` karşılıkları | Çok sayfalı, iki dilli site | `feature/pages` |
 | ✅ **5. İndirmeler** | PyAI.exe ve Quiz.zip (Quiz.ino + devre şeması) GitHub Releases'e; "İndir" butonları bağlanır | İndirmeler çalışıyor | `feature/downloads` |
-| **6. Arama** | ⌘K / Ctrl+K arama penceresi (sayfalar, projeler, SSS); tarayıcıda çalışır | Arama hazır | `feature/search` |
+| ✅ **6. Arama** | ⌘K / Ctrl+K arama penceresi (sayfalar, projeler, SSS); tarayıcıda çalışır | Arama hazır | `feature/search` |
 | **7. Cila ve yayın** | SEO (meta, OG görseli, sitemap), mobil, erişilebilirlik, performans, görsel optimizasyonu | **v1.0.0** | `chore/launch-polish` |
 
 Her faz kendi branch'inde yapılır ve Pull Request ile `main`'e girer.

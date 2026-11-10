@@ -2,6 +2,21 @@
 
 ### [2026-11-10 - Mehbur07]
 - **Yapılanlar & Kararlar:**
+  - Faz 6 (`feature/search`): ⌘K / Ctrl+K arama penceresi (`app/components/search/Search.tsx`), menüde "Ara" butonu (mobilde yalnızca ikon)
+  - İndeks sözlükten üretiliyor (`app/lib/search.ts`): 7 sayfa + 2 proje + tüm SSS; Türkçe karakter duyarsız eşleştirme, başlık eşleşmesi öne çıkıyor
+  - Tarayıcının `<dialog>` öğesi kullanıldı (Esc, odak tuzağı, arka plan etkileşimsiz); combobox/listbox ARIA, ekran okuyucuya sonuç sayısı duyurusu
+  - SSS sorularına sabit id verildi (`faqId`); `/sss#...` adresinde soru açık geliyor ve menünün altında duracak şekilde kayıyor
+  - Test: iframe'li test sayfasıyla Ctrl+K, yazma, ↓ ve Enter simüle edildi; arama/yönlendirme/soru açma doğrulandı
+- **Son Commit:** 542761e Merge pull request #5 from mehpix/feature/downloads
+- **Aktif Branch:** main
+- **Sıradaki İlk İş (Next Action):** Faz 7 — `chore/launch-polish`: SEO (sitemap, OG görseli), favicon, görsel optimizasyonu (2 MB'lık logolar), son kontroller ve v1.0.0 tag'i
+- **Bilinen Sorunlar / Dikkat Edilmesi Gerekenler:**
+  - Headless Edge'de yumuşak kaydırma (`scroll-behavior: smooth`) animasyonu ilerlemiyor; hash kaydırma testinde geçici olarak kapatıldı (gerçek tarayıcıda sorun yok)
+  - Quiz.ino düzeltmesi hâlâ derlenerek doğrulanmadı; kullanıcı LiquidCrystal_I2C (Frank de Brabander) kütüphanesini kurup denemeli
+  - `.vscode/settings.json` takip edilmiyor (kullanıcının editör ayarı)
+
+### [2026-11-10 - Mehbur07]
+- **Yapılanlar & Kararlar:**
   - Web3Forms anahtarı `WEB3FORMS_KEY` GitHub secret'ı ve yerel `.env` olarak eklendi; site yeniden yayınlandı, form doğrudan e-posta gönderiyor
   - Faz 5 (`feature/downloads`): `mehpix/Quiz` (MIT, kod + BAGLANTI.md + Release'te Quiz.zip) ve `mehpix/PyAI` (README + Release'te PyAI.exe) public repoları açıldı; ikisinde de branch koruması ve Dependabot uyarıları aktif
   - `Quiz.ino` düzeltildi (orijinal + repo): `soruAktif` yazım hatası, kullanılmayan Adafruit/splash include'ları kaldırıldı. Orijinalin yedeği alındı

@@ -18,3 +18,4 @@ sürümler [Semantic Versioning](https://semver.org/lang/tr/) kurallarını izle
 - Projeler (filtreli), PyAI, Quiz (oynanış, parça listesi, bağlantı tablosu), Hakkımızda, İletişim (form) ve SSS sayfaları Türkçe ve İngilizce olarak eklendi.
 - 404 ekranı menü, footer ve önerilen sayfa bağlantılarıyla yenilendi; Quiz açıklaması kodla uyumlu olacak şekilde "matematik yarışması" olarak düzeltildi.
 - PyAI ve Quiz artık indirilebiliyor: dosyalar mehpix/PyAI ve mehpix/Quiz repolarının Releases sayfalarında; proje sayfalarına İndir/GitHub butonları, SHA-256 doğrulama ve Windows uyarısı notu eklendi.
+- Site içi arama eklendi: menüdeki "Ara" butonu veya ⌘K / Ctrl+K ile sayfalar, projeler ve SSS soruları aranabiliyor; SSS sonuçları ilgili soruyu açık getiriyor.
