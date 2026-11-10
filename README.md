@@ -110,8 +110,12 @@ Türkçe'ye eklenen bir metin İngilizce'de eksik kalırsa tip kontrolü hata ve
 - **Fontlar:** Space Grotesk (başlık), Inter (metin), JetBrains Mono (etiket). Siteyle birlikte
   barındırılır; Google'a istek gitmez.
 - **Bileşenler:** `components/ui` (Button, Card, Badge, SectionHeader, Container, Marquee,
-  CountUp), `components/layout` (Navbar, Footer, ThemeToggle, LangSwitch, LiveClock) ve
+  CountUp, FloatingCode), `components/layout` (Navbar, Footer, ThemeToggle, LangSwitch, LiveClock) ve
   `components/home` (ana sayfa bölümleri).
+- **Arka plan süsü:** Menülü tüm sayfaların arkasında neon `</>` kutucukları yavaşça dolaşır
+  ([FloatingCode.tsx](app/components/ui/FloatingCode.tsx)). Konum, boyut ve hız oradaki listeden,
+  görünüm ve rota `app.css` içindeki `.floating-code` ve `code-drift` kurallarından değiştirilir.
+  "Hareketi azalt" ayarı açık olanlarda kutucuklar sabit durur.
 
 ## Ana sayfa
 
