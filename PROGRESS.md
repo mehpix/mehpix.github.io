@@ -2,6 +2,22 @@
 
 ### [2026-11-10 - Mehbur07]
 - **Yapılanlar & Kararlar:**
+  - PR #9 (Hakkımızda açık kaynak paragrafı) merge edildi ve yayında
+  - `feature/floating-code-icons`: `FloatingCode` bileşeni `_site.tsx` düzenine eklendi; 10 neon `</>` kutucuğu (mobilde 4) sabit konumlardan `code-drift` animasyonuyla dolaşıyor
+  - Okunabilirlik için kutucuklar kenarlarda; ortaya yakın 3 tanesi `floating-code-faint` ile daha soluk. Konumlar rastgele değil (prerender ile hydration uyumu)
+  - Kontroller: koyu tema, açık tema ve 390 px mobil görünüm headless Edge ile doğrulandı; "hareketi azalt" ayarında app.css'teki genel kural animasyonu durduruyor
+- **Son Commit:** cdcf7f0 Merge pull request #9 from mehpix/feature/about-open-source
+- **Aktif Branch:** main
+- **Sıradaki İlk İş (Next Action):** Kullanıcı sekmede MPX ikonunu ve arka plan simgelerini canlıda görsün; onaylarsa v1.0.0 tag'i + CHANGELOG sürüm başlığı + GitHub Release
+- **Bilinen Sorunlar / Dikkat Edilmesi Gerekenler:**
+  - Kutucuk sayısı/yoğunluğu kullanıcı zevkine göre `ITEMS` listesinden ayarlanabilir
+  - PyAI kodu ileride yayınlanırsa Hakkımızda metni "Projelerimiz açık kaynaklıdır" olarak güncellenebilir
+  - PyAI logosunun arka planında anlamsız komutlar var (`Clown`, `Get-Malggle`)
+  - Dependabot: minimatch (orta) — yalnızca ESLint geliştirme aracında
+  - `.vscode/settings.json` takip edilmiyor (kullanıcının editör ayarı)
+
+### [2026-11-10 - Mehbur07]
+- **Yapılanlar & Kararlar:**
   - PR #8 (favicon `?v=2`) merge edildi ve yayında
   - `feature/about-open-source`: Hakkımızda > Hikâyemiz'e 4. paragraf (TR + EN)
   - Kullanıcı "Projelerimiz açık kaynaklıdır" istedi; PyAI'ın kaynak kodu yayında olmadığı için (mehpix/PyAI'da yalnızca README + Release'te exe) kullanıcının onayıyla doğru ifade seçildi: Quiz açık kaynak (MIT), PyAI ücretsiz indirilebilir
