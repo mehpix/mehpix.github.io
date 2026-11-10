@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Geçici temel stil (Faz 1). Renk paleti, fontlar ve açık tema Faz 2'de
+   tasarım sistemiyle birlikte genişletilecek. */
+@theme {
+  --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
+  --color-ink: #05080d;
+  --color-neon: #22e3ff;
+}
+
+html,
+body {
+  @apply bg-ink text-slate-100 antialiased;
+  color-scheme: dark;
+}
