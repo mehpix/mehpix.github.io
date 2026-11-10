@@ -63,7 +63,7 @@ export const en: Dictionary = {
     projects: {
       eyebrow: "Portfolio",
       title: "Our Projects",
-      subtitle: "What we are working on, and what you will soon be able to download.",
+      subtitle: "What we are working on, ready for you to download.",
     },
     values: {
       eyebrow: "Why us?",
@@ -129,10 +129,10 @@ export const en: Dictionary = {
           status: "progress",
         },
         {
-          date: "2026",
+          date: "November 2026",
           title: "Downloads",
-          body: "PyAI and Quiz will be downloadable from this site.",
-          status: "planned",
+          body: "PyAI and Quiz can now be downloaded from this site; Quiz's code is open on GitHub.",
+          status: "done",
         },
         {
           date: "2027",
@@ -189,7 +189,11 @@ export const en: Dictionary = {
           },
           {
             q: "Which systems does PyAI run on?",
-            a: "PyAI comes as a single .exe file for Windows (about 9 MB). It needs no installation; just run the file.",
+            a: "PyAI comes as a single .exe file for Windows 10 and 11 (64-bit), about 9 MB. It needs no installation; just run the file.",
+          },
+          {
+            q: "Windows warns me when I open PyAI. Is it safe?",
+            a: "PyAI is not code-signed, so Windows may show a \"Windows protected your PC\" warning on first launch. Choose \"More info\" and then \"Run anyway\". You can check that the file has not been altered with the SHA-256 value on the PyAI page.",
           },
         ],
       },
@@ -204,6 +208,10 @@ export const en: Dictionary = {
             q: "How do I play Quiz?",
             a: "The D2 button starts the game. You have 20 seconds for each arithmetic question; pick your answer with the A, B or C button, and each correct answer is worth 10 points. A short press on D2 skips a question; holding it for 3 seconds pauses the game.",
           },
+          {
+            q: "Can I modify Quiz's code?",
+            a: "Yes. Quiz is shared under the MIT license: you can use, modify and share the code as long as you keep the license text. The source code is in the mehpix/Quiz repository on GitHub.",
+          },
         ],
       },
       {
@@ -211,7 +219,7 @@ export const en: Dictionary = {
         items: [
           {
             q: "How can I download the projects?",
-            a: "Downloads are coming to this site very soon. PyAI will come as a single .exe file; Quiz's Arduino code and circuit diagram will be shared in a .zip file.",
+            a: "With the \"Download\" button on each project page. PyAI is a single .exe file (about 9 MB); Quiz is a .zip file with the Arduino code, the wiring table and setup instructions. Files are downloaded from GitHub.",
           },
         ],
       },
@@ -250,7 +258,16 @@ export const en: Dictionary = {
     },
     project: {
       back: "All projects",
-      downloadSoon: "Download coming soon",
+      download: "Download",
+      viewSource: "View on GitHub",
+      version: "Version",
+      license: "License",
+      allRights: "All rights reserved",
+      verify: {
+        title: "Verify the file",
+        body: "To check that the file you downloaded is the one we published, open PowerShell in the folder that contains it and run:",
+        expected: "The SHA-256 value it prints should match this one:",
+      },
       features: "Features",
       facts: "Details",
       platform: "Platform",
@@ -270,8 +287,12 @@ export const en: Dictionary = {
         { title: "Learns", body: "It keeps what it learns on your computer, together with your chats." },
         { title: "Built with Python", body: "PyAI is written in Python, which also gave it its name." },
       ],
-      platform: "Windows",
+      platform: "Windows 10/11 (64-bit)",
       file: "File",
+      smartscreen: {
+        title: "Windows warning on first launch",
+        body: "PyAI is not code-signed, so Windows may show a \"Windows protected your PC\" (SmartScreen) warning on first launch. This is a general warning for unsigned programs. To run it, click \"More info\" and then \"Run anyway\".",
+      },
       fileValue: "PyAI.exe · about 9 MB",
     },
     quiz: {
@@ -375,6 +396,10 @@ export const en: Dictionary = {
       },
       platform: "Arduino Uno",
       library: "Library",
+      zip: {
+        title: "What's in the zip?",
+        body: "Quiz.zip contains the Arduino code (Quiz.ino), the wiring table (BAGLANTI.md and an image), setup instructions (README.md) and the MIT license. Unzip it and open Quiz.ino from the Quiz folder in the Arduino IDE.",
+      },
     },
     about: {
       meta: {

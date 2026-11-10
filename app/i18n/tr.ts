@@ -62,7 +62,7 @@ export const tr = {
     projects: {
       eyebrow: "Portföyümüz",
       title: "Projelerimiz",
-      subtitle: "Üzerinde çalıştıklarımız ve çok yakında indirebilecekleriniz.",
+      subtitle: "Üzerinde çalıştıklarımız ve hemen indirebilecekleriniz.",
     },
     values: {
       eyebrow: "Neden biz?",
@@ -128,10 +128,10 @@ export const tr = {
           status: "progress",
         },
         {
-          date: "2026",
+          date: "Kasım 2026",
           title: "İndirmeler",
-          body: "PyAI ve Quiz bu siteden indirilebilir hale gelecek.",
-          status: "planned",
+          body: "PyAI ve Quiz artık bu siteden indirilebiliyor; Quiz'in kodu GitHub'da açık.",
+          status: "done",
         },
         {
           date: "2027",
@@ -188,7 +188,11 @@ export const tr = {
           },
           {
             q: "PyAI hangi sistemlerde çalışır?",
-            a: "PyAI, Windows için tek bir .exe dosyası olarak hazırlandı (yaklaşık 9 MB). Kurulum gerektirmez; dosyayı çalıştırmanız yeterli.",
+            a: "PyAI, Windows 10 ve 11 (64 bit) için tek bir .exe dosyası olarak hazırlandı (yaklaşık 9 MB). Kurulum gerektirmez; dosyayı çalıştırmanız yeterli.",
+          },
+          {
+            q: "Windows PyAI'ı açarken uyarı veriyor, güvenli mi?",
+            a: "PyAI dijital olarak imzalanmadığı için Windows ilk açılışta \"Windows bilgisayarınızı korudu\" uyarısı gösterebilir. \"Ek bilgi\" ve ardından \"Yine de çalıştır\" ile açabilirsiniz. Dosyanın değiştirilmediğini PyAI sayfasındaki SHA-256 değeriyle doğrulayabilirsiniz.",
           },
         ],
       },
@@ -203,6 +207,10 @@ export const tr = {
             q: "Quiz nasıl oynanır?",
             a: "D2 butonuyla oyun başlar. Her dört işlem sorusu için 20 saniyeniz var; cevabı A, B veya C butonuyla seçersiniz ve her doğru cevap 10 puan kazandırır. D2'ye kısa basınca soru pas geçilir, 3 saniye basılı tutunca oyun duraklar.",
           },
+          {
+            q: "Quiz'in kodunu değiştirebilir miyim?",
+            a: "Evet. Quiz MIT lisansıyla paylaşılıyor: kodu kullanabilir, değiştirebilir ve paylaşabilirsiniz; lisans metnini korumanız yeterli. Kaynak kod GitHub'daki mehpix/Quiz reposunda.",
+          },
         ],
       },
       {
@@ -210,7 +218,7 @@ export const tr = {
         items: [
           {
             q: "Projeleri nasıl indirebilirim?",
-            a: "İndirmeler çok yakında bu sitede olacak. PyAI tek bir .exe dosyası olarak gelecek; Quiz için Arduino kodu ve devre şeması bir .zip dosyasında paylaşılacak.",
+            a: "Her projenin sayfasındaki \"İndir\" butonuyla. PyAI tek bir .exe dosyası (yaklaşık 9 MB); Quiz ise Arduino kodunu, bağlantı tablosunu ve kurulum anlatımını içeren bir .zip dosyası. Dosyalar GitHub üzerinden iner.",
           },
         ],
       },
@@ -249,7 +257,16 @@ export const tr = {
     },
     project: {
       back: "Tüm projeler",
-      downloadSoon: "İndirme yakında",
+      download: "İndir",
+      viewSource: "GitHub'da görüntüle",
+      version: "Sürüm",
+      license: "Lisans",
+      allRights: "Tüm hakları saklıdır",
+      verify: {
+        title: "Dosyayı doğrulama",
+        body: "İndirdiğiniz dosyanın bizim yayınladığımızla aynı olduğunu, dosyanın bulunduğu klasörde PowerShell'i açıp şu komutla kontrol edebilirsiniz:",
+        expected: "Çıkan SHA-256 değeri bununla aynı olmalı:",
+      },
       features: "Özellikler",
       facts: "Bilgiler",
       platform: "Platform",
@@ -272,8 +289,12 @@ export const tr = {
         { title: "Öğrenir", body: "Öğrendiklerini de sohbetlerle birlikte bilgisayarınızda tutar." },
         { title: "Python ile yazıldı", body: "PyAI, adını da aldığı Python diliyle geliştirildi." },
       ],
-      platform: "Windows",
+      platform: "Windows 10/11 (64 bit)",
       file: "Dosya",
+      smartscreen: {
+        title: "İlk açılışta Windows uyarısı",
+        body: "PyAI dijital olarak imzalanmadığı için Windows ilk açılışta \"Windows bilgisayarınızı korudu\" (SmartScreen) uyarısı gösterebilir. Bu, imzasız programlarda görülen genel bir uyarıdır. Çalıştırmak için \"Ek bilgi\"ye, ardından \"Yine de çalıştır\"a tıklayın.",
+      },
       fileValue: "PyAI.exe · yaklaşık 9 MB",
     },
     quiz: {
@@ -377,6 +398,10 @@ export const tr = {
       },
       platform: "Arduino Uno",
       library: "Kütüphane",
+      zip: {
+        title: "Zip'in içinde neler var?",
+        body: "Quiz.zip; Arduino kodunu (Quiz.ino), bağlantı tablosunu (BAGLANTI.md ve görseli), kurulum anlatımını (README.md) ve MIT lisansını içerir. Zip'i açıp Quiz klasöründeki Quiz.ino dosyasını Arduino IDE ile açmanız yeterli.",
+      },
     },
     about: {
       meta: {

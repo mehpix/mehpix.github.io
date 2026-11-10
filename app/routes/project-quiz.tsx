@@ -4,7 +4,9 @@ import {
   DetailBlock,
   FactList,
   FeatureGrid,
+  getProject,
   ProjectHero,
+  VerifyDownload,
 } from "~/components/project/ProjectDetail";
 import { ProjectStatusBadge } from "~/components/ProjectList";
 import { Container } from "~/components/ui/Container";
@@ -22,11 +24,12 @@ export default function ProjectQuiz() {
   const { t } = useI18n();
   const s = t.pages.quiz;
   const p = t.pages.project;
+  const project = getProject("quiz");
 
   return (
     <>
       <ProjectHero projectKey="quiz" />
-      <Container className="grid gap-12 py-14 sm:py-20 lg:grid-cols-[1fr_20rem]">
+      <Container className="grid grid-cols-1 gap-12 py-14 sm:py-20 lg:grid-cols-[1fr_20rem]">
         <div className="min-w-0 space-y-14">
           <p className="max-w-2xl text-lg leading-relaxed text-fg/90">{s.intro}</p>
 
@@ -76,6 +79,12 @@ export default function ProjectQuiz() {
               {s.wiring.image} <ArrowUpRightIcon />
             </a>
           </DetailBlock>
+
+          <DetailBlock id="zip-icerigi" title={s.zip.title}>
+            <p className="max-w-2xl text-muted">{s.zip.body}</p>
+          </DetailBlock>
+
+          <VerifyDownload projectKey="quiz" />
         </div>
 
         <aside>
@@ -85,7 +94,9 @@ export default function ProjectQuiz() {
               { label: p.platform, value: s.platform },
               { label: p.language, value: "C++ (Arduino)" },
               { label: s.library, value: "LiquidCrystal_I2C" },
-              { label: p.status, value: <ProjectStatusBadge status="soon" /> },
+              { label: p.version, value: project.download.version },
+              { label: p.license, value: project.license ?? p.allRights },
+              { label: p.status, value: <ProjectStatusBadge status={project.status} /> },
             ]}
           />
         </aside>
