@@ -2,6 +2,21 @@
 
 ### [2026-11-10 - Mehbur07]
 - **Yapılanlar & Kararlar:**
+  - Web3Forms anahtarı `WEB3FORMS_KEY` GitHub secret'ı ve yerel `.env` olarak eklendi; site yeniden yayınlandı, form doğrudan e-posta gönderiyor
+  - Faz 5 (`feature/downloads`): `mehpix/Quiz` (MIT, kod + BAGLANTI.md + Release'te Quiz.zip) ve `mehpix/PyAI` (README + Release'te PyAI.exe) public repoları açıldı; ikisinde de branch koruması ve Dependabot uyarıları aktif
+  - `Quiz.ino` düzeltildi (orijinal + repo): `soruAktif` yazım hatası, kullanılmayan Adafruit/splash include'ları kaldırıldı. Orijinalin yedeği alındı
+  - Site: projeler "Yayında"; detay sayfalarında İndir + GitHub butonları, sürüm/boyut, SHA-256 doğrulama bloğu, PyAI için SmartScreen notu; yol haritasında "İndirmeler" tamamlandı; SSS'ye 2 soru eklendi
+  - PyAI.exe yayınlanmadan önce tarandı: API anahtarı veya HTTP/AI kütüphanesi izi yok (x64, Python 3.14, PyInstaller)
+- **Son Commit:** f8080e9 Merge pull request #4 from mehpix/feature/pages
+- **Aktif Branch:** main
+- **Sıradaki İlk İş (Next Action):** Faz 6 — `feature/search`: ⌘K / Ctrl+K arama penceresi (sayfalar, projeler, SSS)
+- **Bilinen Sorunlar / Dikkat Edilmesi Gerekenler:**
+  - Quiz.ino düzeltmesi derlenerek doğrulanmadı (Arduino IDE/CLI kurulu değil); kullanıcı Arduino IDE'de denemeli
+  - Yeni PyAI/Quiz sürümünde `app/data/projects.ts` içindeki version/size/sha256 güncellenmeli
+  - `.vscode/settings.json` takip edilmiyor (kullanıcının editör ayarı); commit'lere eklenmedi
+
+### [2026-11-10 - Mehbur07]
+- **Yapılanlar & Kararlar:**
   - Faz 4 (`feature/pages`): `/projeler` (Uygulama/Donanım filtresi), `/projeler/pyai`, `/projeler/quiz`, `/hakkimizda`, `/iletisim`, `/sss` + `/en/...` karşılıkları; toplam 16 sayfa prerender ediliyor
   - Faz 3'teki `linkFor`/`READY_PAGES` geçici yönlendirmesi kaldırıldı; menü artık gerçek sayfalara gidiyor. Detay sayfalarında menüde "Projeler" aktif görünüyor
   - SSS tek kaynakta (`faq.groups`); ana sayfa her grubun ilk sorusunu gösteriyor. Sayfa meta bilgileri `app/lib/meta.ts` ile (OG + hreflang)

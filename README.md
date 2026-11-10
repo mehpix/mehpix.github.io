@@ -4,8 +4,7 @@ MehPiX'in resmi web sitesi. Stüdyonun projelerini (PyAI, Quiz), iş birliklerin
 ekibin kişisel sitelerini ve iletişim bilgilerini tanıtır.
 
 - **Yayın adresi:** https://mehpix.github.io
-- **Durum:** Faz 4 tamamlandı — ana sayfa ve tüm alt sayfalar (Projeler, PyAI, Quiz, Hakkımızda,
-  İletişim, SSS) Türkçe ve İngilizce olarak yayında. İndirmeler Faz 5'te gelecek.
+- **Durum:** Faz 5 tamamlandı — tüm sayfalar Türkçe ve İngilizce yayında; PyAI ve Quiz indirilebiliyor.
   Bileşen vitrini: https://mehpix.github.io/tasarim (arama motorlarına kapalı).
   Planın tamamı için [ROADMAP.md](ROADMAP.md) dosyasına bakın.
 
@@ -33,6 +32,19 @@ pnpm typecheck   # TypeScript tip kontrolü
 pnpm build       # yayına hazır dosyaları build/client/ klasörüne üret
 pnpm preview     # derlenmiş siteyi yerelde önizle
 ```
+
+## İndirmeler
+
+Proje dosyaları sitenin reposunda değil, her projenin kendi reposunun **Releases** sayfasında durur:
+
+| Proje | Repo | Dosya |
+|---|---|---|
+| PyAI | [mehpix/PyAI](https://github.com/mehpix/PyAI) | `PyAI.exe` (Windows 10/11, 64 bit; imzasız) |
+| Quiz | [mehpix/Quiz](https://github.com/mehpix/Quiz) | `Quiz.zip` (Quiz.ino, bağlantı tablosu, README, MIT lisansı) |
+
+Sitedeki "İndir" butonları `releases/latest/download/<dosya>` adresini kullanır, yani her zaman en
+yeni sürüme gider. Yeni bir sürüm yayınlandığında yalnızca [app/data/projects.ts](app/data/projects.ts)
+içindeki `version`, `size` ve `sha256` değerleri güncellenir (SHA-256 sayfada doğrulama için gösterilir).
 
 ## Ortam değişkenleri (.env)
 
