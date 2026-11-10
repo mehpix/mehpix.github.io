@@ -21,7 +21,7 @@ Kimlik (neon tema, logo, metinler) MehPiX'e ait kalır; sahte yorum veya şişir
 | ✅ **4. Alt sayfalar** | `/projeler` (filtreli), `/projeler/pyai`, `/projeler/quiz`, `/hakkimizda`, `/iletisim` (çalışan form), `/sss`, 404 + `/en/...` karşılıkları | Çok sayfalı, iki dilli site | `feature/pages` |
 | ✅ **5. İndirmeler** | PyAI.exe ve Quiz.zip (Quiz.ino + devre şeması) GitHub Releases'e; "İndir" butonları bağlanır | İndirmeler çalışıyor | `feature/downloads` |
 | ✅ **6. Arama** | ⌘K / Ctrl+K arama penceresi (sayfalar, projeler, SSS); tarayıcıda çalışır | Arama hazır | `feature/search` |
-| **7. Cila ve yayın** | SEO (meta, OG görseli, sitemap), mobil, erişilebilirlik, performans, görsel optimizasyonu | **v1.0.0** | `chore/launch-polish` |
+| ✅ **7. Cila ve yayın** | SEO (meta, OG görseli, sitemap), mobil, erişilebilirlik, performans, görsel optimizasyonu | **v1.0.0** | `chore/launch-polish` |
 
 Her faz kendi branch'inde yapılır ve Pull Request ile `main`'e girer.
 
@@ -29,10 +29,11 @@ Her faz kendi branch'inde yapılır ve Pull Request ile `main`'e girer.
 
 | İçerik | Kaynak | Not |
 |---|---|---|
-| MPX logosu | `public/images/mpx-logo.jpg` | Faz 7'de küçültülüp WebP'ye çevrilecek |
-| Mehbur07 logosu | `public/images/mehbur-logo.jpg` | Kişisel siteler: mehbur07.lovable.app |
+| MPX logosu | `public/images/mpx-logo.webp` | Ana sayfa; favicon ve paylaşım görseli de bundan üretildi |
+| PyAI logosu | `public/images/pyai-logo.webp` | Projeler: PyAI |
+| Mehbur07 logosu | `public/images/mehbur-logo.webp` | Kişisel siteler: mehbur07.github.io |
 | MicroCore logosu | `public/images/microcore-logo.png` | Düşük çözünürlük (~165 px); büyüğü gelirse değişecek |
-| Quiz logosu | `public/images/quiz-logo.jpg` | Projeler: Quiz (Arduino) |
+| Quiz logosu | `public/images/quiz-logo.webp` | Projeler: Quiz (Arduino) |
 | Quiz bağlantı tablosu | `public/images/quiz-baglanti-tablosu.png` | Sitede HTML tablo olarak da gösterilecek |
 | PyAI.exe | `projelerim/Py/PyAI/PyAI.exe` (~9 MB) | [mehpix/PyAI](https://github.com/mehpix/PyAI) Releases v1.0.0; imzasız, SmartScreen notu sitede ve README'de |
 | Quiz.ino | `projelerim/C++/Quiz.ino` | [mehpix/Quiz](https://github.com/mehpix/Quiz) (MIT); Releases v1.0.0'da `Quiz.zip` |
