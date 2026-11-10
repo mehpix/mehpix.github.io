@@ -21,7 +21,13 @@ export function ProjectStatusBadge({ status }: { status: ProjectStatus }) {
 }
 
 /** Proje kartları ızgarası; her kart projenin detay sayfasına gider. */
-export function ProjectList({ projects = PROJECTS }: { projects?: readonly Project[] }) {
+export function ProjectList({
+  projects = PROJECTS,
+  headingLevel,
+}: {
+  projects?: readonly Project[];
+  headingLevel?: "h2" | "h3";
+}) {
   const { lang, t } = useI18n();
   return (
     <ul className="grid gap-6 md:grid-cols-2">
@@ -37,6 +43,7 @@ export function ProjectList({ projects = PROJECTS }: { projects?: readonly Proje
               status={<ProjectStatusBadge status={p.status} />}
               href={pathFor(p.page, lang)}
               cta={t.pages.projects.details}
+              headingLevel={headingLevel}
             />
           </li>
         );

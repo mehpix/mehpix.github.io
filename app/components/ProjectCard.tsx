@@ -18,6 +18,7 @@ export function ProjectCard({
   status,
   href,
   cta,
+  headingLevel: Heading = "h3",
 }: {
   image: string;
   title: string;
@@ -26,6 +27,8 @@ export function ProjectCard({
   status: ReactNode;
   href?: string;
   cta?: string;
+  /** Sayfadaki başlık sırasına göre: bölüm içindeyse h3, doğrudan sayfa başlığı altındaysa h2 */
+  headingLevel?: "h2" | "h3";
 }) {
   const content = (
     <Card interactive={Boolean(href)} className="flex h-full flex-col overflow-hidden p-0">
@@ -37,7 +40,7 @@ export function ProjectCard({
       />
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center justify-between gap-3">
-          <h3 className="text-2xl font-bold text-fg">{title}</h3>
+          <Heading className="text-2xl font-bold text-fg">{title}</Heading>
           {status}
         </div>
         <div className="mt-3 flex flex-wrap gap-2">
