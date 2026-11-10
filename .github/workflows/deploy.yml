@@ -1,0 +1,61 @@
+# Siteyi derler ve GitHub Pages'e yayınlar.
+# - Pull Request'lerde: yalnızca kontrol (lint + tip kontrolü + derleme), yayın yok
+# - main'e merge edilince: kontrol + https://mehpix.github.io adresine yayın
+name: Build & Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Aynı branch için üst üste gelen çalıştırmalarda PR kontrolleri iptal edilir,
+# main'e yapılan yayınlar ise yarıda kesilmez.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      # pnpm sürümü package.json içindeki "packageManager" alanından okunur.
+      - uses: pnpm/action-setup@v6
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm build
+
+      # GitHub Pages bilinmeyen adreslerde 404.html gösterir; bunu React Router'ın
+      # SPA yedek sayfasıyla değiştirerek 404 ekranını uygulamanın çizmesini sağlarız.
+      - run: cp build/client/__spa-fallback.html build/client/404.html
+
+      - uses: actions/upload-pages-artifact@v5
+        if: github.event_name != 'pull_request'
+        with:
+          path: build/client
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
