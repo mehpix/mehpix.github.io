@@ -12,18 +12,23 @@ const TONES: Record<BadgeTone, string> = {
 /**
  * Küçük durum etiketi ("Yayında", "Yakında", "Partner" gibi).
  * dot=true durum bildiren rozetlerde başa küçük bir nokta ekler.
+ * lang: rozet metni büyük harfe çevrilirken hangi dilin kuralı uygulanacağı.
+ * Türkçe kuralı "Arduino"yu "ARDUİNO" yapar; marka adlarında lang="en" verilir.
  */
 export function Badge({
   tone = "neutral",
   dot = false,
+  lang,
   children,
 }: {
   tone?: BadgeTone;
   dot?: boolean;
+  lang?: string;
   children: ReactNode;
 }) {
   return (
     <span
+      lang={lang}
       className={`inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 font-mono text-[0.7rem] font-medium tracking-wide uppercase ${TONES[tone]}`}
     >
       {dot && <span aria-hidden className="size-1.5 rounded-full bg-current" />}

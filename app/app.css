@@ -75,6 +75,18 @@
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk Variable", "Inter Variable", ui-sans-serif, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, "Cascadia Code", monospace;
+
+  /* Kayan yazı şeridi: içerik iki kez yan yana dizilir, yarısı kadar
+     kaydırılınca başa döner; böylece kesintisiz akıyormuş gibi görünür. */
+  --animate-marquee: marquee 40s linear infinite;
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 /* ------------------------------------------------------------------
@@ -83,6 +95,11 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Menüden bir bölüme atlanınca başlık yapışık menünün altında kalmasın */
+  section[id] {
+    scroll-margin-top: 4rem;
   }
 
   body {

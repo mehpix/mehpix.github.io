@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 
 import type { Route } from "./+types/design";
 import { ArrowRightIcon } from "~/components/icons";
+import { ProjectCard } from "~/components/ProjectCard";
 import { Badge } from "~/components/ui/Badge";
 import { Button, ButtonLink } from "~/components/ui/Button";
 import { Card } from "~/components/ui/Card";
@@ -128,8 +129,8 @@ export default function Design() {
                 {c.soon}
               </Badge>
               <Badge tone="accent">{c.partner}</Badge>
-              <Badge>{t.projects.pyai.tag}</Badge>
-              <Badge>{t.projects.quiz.tag}</Badge>
+              <Badge lang="en">{t.projects.pyai.tag}</Badge>
+              <Badge lang="en">{t.projects.quiz.tag}</Badge>
             </div>
           </Demo>
 
@@ -138,7 +139,7 @@ export default function Design() {
               <ProjectCard
                 image="/images/mpx-logo.jpg"
                 title={t.projects.pyai.title}
-                tag={t.projects.pyai.tag}
+                tags={[t.projects.pyai.tag, "Python"]}
                 body={t.projects.pyai.body}
                 status={<Badge tone="warning" dot>{c.soon}</Badge>}
                 cta={c.details}
@@ -146,7 +147,7 @@ export default function Design() {
               <ProjectCard
                 image="/images/quiz-logo.jpg"
                 title={t.projects.quiz.title}
-                tag={t.projects.quiz.tag}
+                tags={[t.projects.quiz.tag, "C++"]}
                 body={t.projects.quiz.body}
                 status={<Badge tone="warning" dot>{c.soon}</Badge>}
                 cta={c.details}
@@ -181,45 +182,5 @@ function Demo({ title, children }: { title: string; children: ReactNode }) {
       <h3 className="mb-5 font-mono text-sm tracking-[0.2em] text-muted uppercase">{title}</h3>
       {children}
     </div>
-  );
-}
-
-function ProjectCard({
-  image,
-  title,
-  tag,
-  body,
-  status,
-  cta,
-}: {
-  image: string;
-  title: string;
-  tag: string;
-  body: string;
-  status: ReactNode;
-  cta: string;
-}) {
-  return (
-    <Card interactive className="flex flex-col overflow-hidden p-0">
-      <img
-        src={image}
-        alt=""
-        loading="lazy"
-        className="aspect-[16/9] w-full border-b border-line object-cover"
-      />
-      <div className="flex flex-1 flex-col p-6">
-        <div className="flex items-center justify-between gap-3">
-          <h4 className="text-2xl font-bold text-fg">{title}</h4>
-          {status}
-        </div>
-        <div className="mt-2">
-          <Badge>{tag}</Badge>
-        </div>
-        <p className="mt-4 flex-1 text-sm text-muted">{body}</p>
-        <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-accent">
-          {cta} <ArrowRightIcon />
-        </span>
-      </div>
-    </Card>
   );
 }
