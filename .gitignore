@@ -20,6 +20,7 @@ Thumbs.db
 .env.*
 !.env.example
 
-# Editör / araç önbellekleri
+# Editör / araç önbellekleri ve otomatik üretilen tipler
+.react-router/
 .vite/
 .eslintcache
