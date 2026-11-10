@@ -5,6 +5,7 @@ import { useI18n } from "~/i18n";
 import { isActive, pathFor, type PageKey } from "~/lib/paths";
 
 import { CloseIcon, MenuIcon } from "../icons";
+import { Search } from "../search/Search";
 import { ButtonLink } from "../ui/Button";
 import { Container } from "../ui/Container";
 import { LangSwitch } from "./LangSwitch";
@@ -63,6 +64,7 @@ export function Navbar() {
           <div className="hidden sm:block">
             <LangSwitch />
           </div>
+          <Search />
           <ThemeToggle />
           {/* Butonun kendi "inline-flex" sınıfı "hidden"ı ezmesin diye ayrı kapsayıcıda gizlenir */}
           <div className="hidden md:block">

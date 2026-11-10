@@ -27,6 +27,63 @@ export const tr = {
   lang: {
     label: "Dil seçimi",
   },
+  search: {
+    open: "Ara",
+    label: "Sitede ara",
+    placeholder: "Sayfa, proje veya soru arayın…",
+    close: "Kapat",
+    suggestions: "Sayfalar",
+    groups: {
+      pages: "Sayfalar",
+      projects: "Projeler",
+      faq: "Sıkça sorulan sorular",
+    },
+    results: "{n} sonuç bulundu",
+    empty: "\"{q}\" için sonuç bulunamadı.",
+    emptyHint: "Farklı bir kelime deneyin ya da bize yazın.",
+    hints: {
+      navigate: "gezin",
+      select: "aç",
+      close: "kapat",
+    },
+    pages: {
+      home: {
+        title: "Ana sayfa",
+        text: "MehPiX yazılım stüdyosu: projeler, değerler, yol haritası ve iş birlikleri.",
+        keywords: "anasayfa mehpix yol haritası değerler rakamlar iş birlikleri microcore mehbur07 kişisel siteler",
+      },
+      projects: {
+        title: "Projeler",
+        text: "Tüm projelerimiz: PyAI ve Quiz.",
+        keywords: "portföy uygulama donanım indir",
+      },
+      projectPyai: {
+        title: "PyAI",
+        text: "Windows için tek dosyalık sohbet botu; indirme ve dosya doğrulama.",
+        keywords: "chatbot sohbet botu exe indir windows smartscreen python",
+      },
+      projectQuiz: {
+        title: "Quiz (Arduino)",
+        text: "Arduino matematik yarışması: oynanış, parça listesi ve bağlantı tablosu.",
+        keywords: "arduino lcd buton buzzer pin bağlantı tablosu devre şeması zip indir c++",
+      },
+      about: {
+        title: "Hakkımızda",
+        text: "Hikâyemiz, değerlerimiz ve yol haritamız.",
+        keywords: "biz kimiz hikaye vizyon kuruluş değerler yol haritası",
+      },
+      contact: {
+        title: "İletişim",
+        text: "Bize mesaj gönderin ya da e-posta yazın.",
+        keywords: "e-posta email mail form mesaj github iş birliği",
+      },
+      faq: {
+        title: "Sıkça sorulan sorular",
+        text: "MehPiX, PyAI, Quiz ve indirmeler hakkında sorular.",
+        keywords: "sss soru cevap yardım",
+      },
+    },
+  },
   footer: {
     tagline: "Dünyayı değiştirebilecek yazılımlar üretmek için bir aradayız.",
     site: "Site",
