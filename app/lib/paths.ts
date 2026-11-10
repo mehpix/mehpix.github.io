@@ -19,6 +19,30 @@ export function pathFor(page: PageKey, lang: Lang): string {
   return PAGES[page][lang];
 }
 
+// Yayında olan sayfalar. Henüz yapılmamış bir sayfaya verilen bağlantılar
+// 404'e gitmek yerine ana sayfadaki ilgili bölüme yönlenir (aşağıdaki
+// HOME_SECTIONS). Faz 4'te sayfalar eklendikçe buraya yazılır.
+const READY_PAGES: ReadonlySet<PageKey> = new Set(["home", "design"]);
+
+/** Ana sayfadaki bölümlerin id'leri (her iki dilde aynı). */
+export const HOME_SECTIONS = {
+  projects: "projeler",
+  about: "hakkimizda",
+  faq: "sss",
+  contact: "iletisim",
+} as const satisfies Partial<Record<PageKey, string>>;
+
+/**
+ * Menü ve butonlarda kullanılacak bağlantı adresi.
+ * Sayfa hazırsa kendi adresini, değilse ana sayfadaki karşılık gelen
+ * bölümü ("/#projeler", "/en#projeler") döndürür.
+ */
+export function linkFor(page: PageKey, lang: Lang): string {
+  if (READY_PAGES.has(page)) return pathFor(page, lang);
+  const section = (HOME_SECTIONS as Partial<Record<PageKey, string>>)[page];
+  return section ? `${pathFor("home", lang)}#${section}` : pathFor("home", lang);
+}
+
 /** Sondaki "/" işaretini atar ("/en/" → "/en"); kök "/" olduğu gibi kalır. */
 function normalize(pathname: string): string {
   return pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
