@@ -2,7 +2,7 @@ import { Outlet } from "react-router";
 
 import { Footer } from "~/components/layout/Footer";
 import { Navbar } from "~/components/layout/Navbar";
-import { FloatingCode } from "~/components/ui/FloatingCode";
+import { CodeNetwork } from "~/components/ui/CodeNetwork";
 import { useI18n } from "~/i18n";
 
 /**
@@ -20,8 +20,8 @@ export default function SiteLayout() {
       >
         {t.a11y.skip}
       </a>
-      {/* Arka planda süzülen neon </> kutucukları (yalnızca süs) */}
-      <FloatingCode />
+      {/* Arka planda dolaşan, birbirine çizgilerle bağlanan neon </> ağı (yalnızca süs) */}
+      <CodeNetwork />
       <Navbar />
       <main id="icerik" className="flex-1">
         <Outlet />

@@ -23,4 +23,4 @@ sürümler [Semantic Versioning](https://semver.org/lang/tr/) kurallarını izle
 - Logolar WebP'ye çevrilip ~2 MB'tan 60 KB'ın altına indirildi; PyAI kendi logosuna kavuştu, Mehbur07 bağlantısı yeni adresine (mehbur07.github.io) güncellendi.
 - Tarayıcıların eski "ikon yok" kaydını tutup sekmede boş küre göstermesi düzeltildi: ikon adreslerine sürüm eki (`?v=2`) eklendi.
 - Hakkımızda sayfasına paylaşım paragrafı eklendi: Quiz'in MIT lisanslı açık kaynak olduğu, PyAI'ın ücretsiz indirilebildiği yazıyor.
-- Sayfaların arka planında yavaşça dolaşan neon `</>` kod simgeleri eklendi; yazıların okunmasını engellememek için kenarlarda ve soluk duruyorlar.
+- Sayfaların arka planına neon `</>` ikonlarından oluşan hareketli bir ağ eklendi: ikonlar yavaşça dolaşıyor, birbirine yaklaşanlar ince çizgilerle bağlanıyor.
