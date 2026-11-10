@@ -4,7 +4,8 @@ MehPiX'in resmi web sitesi. Stüdyonun projelerini (PyAI, Quiz), iş birliklerin
 ekibin kişisel sitelerini ve iletişim bilgilerini tanıtır.
 
 - **Yayın adresi:** https://mehpix.github.io
-- **Durum:** Faz 2 tamamlandı — tasarım sistemi hazır, ana sayfa hâlâ "yapım aşamasında".
+- **Durum:** Faz 3 tamamlandı — ana sayfa yayında. Alt sayfalar (Projeler, Hakkımızda, SSS,
+  İletişim) Faz 4'te gelecek; o zamana kadar menü bağlantıları ana sayfadaki ilgili bölüme gider.
   Bileşen vitrini: https://mehpix.github.io/tasarim (arama motorlarına kapalı).
   Planın tamamı için [ROADMAP.md](ROADMAP.md) dosyasına bakın.
 
@@ -54,8 +55,22 @@ Türkçe'ye eklenen bir metin İngilizce'de eksik kalırsa tip kontrolü hata ve
   açılırken renk "zıplaması" olmaması için `<head>` içindeki küçük bir betikle uygulanır.
 - **Fontlar:** Space Grotesk (başlık), Inter (metin), JetBrains Mono (etiket). Siteyle birlikte
   barındırılır; Google'a istek gitmez.
-- **Bileşenler:** `components/ui` (Button, Card, Badge, SectionHeader, Container) ve
-  `components/layout` (Navbar, Footer, ThemeToggle, LangSwitch, LiveClock).
+- **Bileşenler:** `components/ui` (Button, Card, Badge, SectionHeader, Container, Marquee,
+  CountUp), `components/layout` (Navbar, Footer, ThemeToggle, LangSwitch, LiveClock) ve
+  `components/home` (ana sayfa bölümleri).
+
+## Ana sayfa
+
+Bölümler sırasıyla: karşılama (hero), kayan yazı şeridi, projeler, değerler, sayaçlar,
+yol haritası, iş birlikleri ve kişisel siteler, SSS ve iletişim bandı.
+
+- **Metinler** (yol haritası maddeleri, SSS soruları dahil) sözlük dosyalarındaki `home` bölümündedir.
+- **Sayaçlardaki rakamlar** gerçektir ve [app/components/home/StatsSection.tsx](app/components/home/StatsSection.tsx)
+  içinde tutulur; proje sayısı proje listesinden otomatik hesaplanır.
+- **Projeler** [app/data/projects.ts](app/data/projects.ts) dosyasındadır (görsel, durum, teknoloji).
+- **Henüz yapılmamış sayfalar:** [app/lib/paths.ts](app/lib/paths.ts) içindeki `linkFor`, hazır olmayan
+  sayfaların bağlantısını ana sayfadaki bölüme (`/#projeler` gibi) yönlendirir. Bir sayfa
+  eklendiğinde `READY_PAGES` listesine yazılması yeterlidir.
 
 ## Klasör yapısı
 
@@ -64,8 +79,10 @@ app/
   root.tsx         Tüm sayfaları saran HTML iskeleti ve hata/404 ekranı
   routes.ts        Sayfa listesi (her sayfa TR + EN olarak tanımlanır)
   routes/          Sayfa bileşenleri (_site.tsx: menü + footer düzeni)
-  components/      Ortak arayüz bileşenleri
+  components/      Ortak arayüz bileşenleri (home/: ana sayfa bölümleri)
+  data/            Proje bilgileri
   lib/paths.ts     Tüm sayfaların TR/EN adresleri
+  lib/site.ts      İletişim e-postası ve dış bağlantılar
   lib/theme.ts     Koyu/açık tema yönetimi
   i18n/            Türkçe ve İngilizce metinler
   app.css          Renk değişkenleri, fontlar ve genel stiller (Tailwind)

@@ -2,6 +2,21 @@
 
 ### [2026-11-10 - Mehbur07]
 - **Yapılanlar & Kararlar:**
+  - Faz 3 (`feature/home-page`): ana sayfa menü + footer düzenine alındı; bölümler `app/components/home/` altında (Hero, Marquee, Projeler, Değerler, Sayaçlar, Yol Haritası, Bağlantılar, SSS, CTA bandı)
+  - Menüdeki henüz yapılmamış sayfalar `linkFor` ile ana sayfadaki bölüme yönleniyor (`/#projeler`, `/#hakkimizda`, `/#sss`, `/#iletisim`); Faz 4'te `READY_PAGES` listesine eklenecek
+  - Sayaçlar gerçek rakamlar: 2 proje, 2 programlama dili, 1 iş birliği, 2026 kuruluş. Sayma efekti yalnızca tarayıcıda; prerender HTML'de gerçek değer var
+  - PyAI kaynak kodu elimizde olmadığı için "veriler dışarı gitmez" denmedi; yalnızca "sohbetler bilgisayarınızda saklanır" ifadesi kullanıldı
+  - Site metinleri "siz" diliyle tutarlı hale getirildi; marka/teknoloji rozetlerine `lang="en"` verildi ("ARDUİNO" sorunu çözüldü)
+- **Son Commit:** 6e23605 Merge pull request #2 from mehpix/feature/design-system
+- **Aktif Branch:** main
+- **Sıradaki İlk İş (Next Action):** Faz 4 — `feature/pages`: alt sayfalar (/projeler, proje detayları, /hakkimizda, /iletisim formu, /sss) + EN karşılıkları; her sayfa bitince `READY_PAGES`'e eklenecek
+- **Bilinen Sorunlar / Dikkat Edilmesi Gerekenler:**
+  - İletişim formu için Web3Forms anahtarı gerekecek (`.env` + GitHub secret)
+  - Proje kartları henüz tıklanmıyor; detay sayfaları Faz 4'te gelince `href` verilecek
+  - `pnpm audit`: minimatch orta seviye açık hâlâ duruyor (yalnızca ESLint geliştirme aracında)
+
+### [2026-11-10 - Mehbur07]
+- **Yapılanlar & Kararlar:**
   - Faz 2 (`feature/design-system`): CSS değişkenli renk paleti (koyu varsayılan + açık tema, açık temada AA kontrastlı koyu camgöbeği vurgu)
   - Tema seçimi `localStorage`'da tutuluyor; `<head>` içindeki betik renk zıplamasını önlüyor
   - Fontlar `@fontsource-variable` ile self-host: Space Grotesk, Inter, JetBrains Mono (Türkçe karakter destekli)

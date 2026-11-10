@@ -13,3 +13,5 @@ sürümler [Semantic Versioning](https://semver.org/lang/tr/) kurallarını izle
 - main'e her merge'de siteyi kontrol edip GitHub Pages'e yayınlayan otomatik iş akışı eklendi.
 - Neon renk paleti, koyu/açık tema, siteyle birlikte barındırılan fontlar ve ortak bileşenler (menü, canlı saatli footer, buton, kart, rozet, bölüm başlığı) eklendi.
 - Bileşenlerin görülebildiği `/tasarim` vitrin sayfası eklendi; ana sayfaya tema ve dil düğmeleri geldi.
+- "Yapım aşamasında" sayfasının yerine gerçek ana sayfa geldi: projeler, değerler, gerçek rakamlı sayaçlar, yol haritası, iş birlikleri, SSS ve iletişim bandı.
+- Henüz yapılmamış sayfalara giden menü bağlantıları artık 404 yerine ana sayfadaki ilgili bölüme gidiyor.

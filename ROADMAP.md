@@ -17,7 +17,7 @@ Kimlik (neon tema, logo, metinler) MehPiX'e ait kalır; sahte yorum veya şişir
 | ✅ **0. Hazırlık** | Git kimliği, pnpm, README, `.gitignore`, `.gitattributes`, PROGRESS, CHANGELOG, logolar; GitHub reposu, branch koruması, Dependabot | Düzgün kurulmuş boş repo | ilk yükleme → `main` |
 | ✅ **1. İskelet** | Vite kurulumu, routing, TR/EN i18n altyapısı, prerender, GitHub Actions ile otomatik yayın | `mehpix.github.io` açılıyor ("yapım aşamasında") | `feature/project-scaffold` |
 | ✅ **2. Tasarım sistemi** | Neon camgöbeği renk paleti, fontlar, koyu/açık tema, ortak bileşenler (menü, canlı saatli footer, buton, kart, "01 / 02" bölüm başlığı) | Sitenin görsel dili hazır | `feature/design-system` |
-| **3. Ana sayfa** | Hero, kayan yazı şeridi, projeler, değerler, gerçek rakamlarla sayaçlar, yol haritası, iş birlikleri, kişisel siteler, SSS, çağrı bandı | MicroCore düzeninde ana sayfa | `feature/home-page` |
+| ✅ **3. Ana sayfa** | Hero, kayan yazı şeridi, projeler, değerler, gerçek rakamlarla sayaçlar, yol haritası, iş birlikleri, kişisel siteler, SSS, çağrı bandı | MicroCore düzeninde ana sayfa | `feature/home-page` |
 | **4. Alt sayfalar** | `/projeler` (filtreli), `/projeler/pyai`, `/projeler/quiz`, `/hakkimizda`, `/iletisim` (çalışan form), `/sss`, 404 + `/en/...` karşılıkları | Çok sayfalı, iki dilli site | `feature/pages` |
 | **5. İndirmeler** | PyAI.exe ve Quiz.zip (Quiz.ino + devre şeması) GitHub Releases'e; "İndir" butonları bağlanır | İndirmeler çalışıyor | `feature/downloads` |
 | **6. Arama** | ⌘K / Ctrl+K arama penceresi (sayfalar, projeler, SSS); tarayıcıda çalışır | Arama hazır | `feature/search` |
@@ -39,7 +39,6 @@ Her faz kendi branch'inde yapılır ve Pull Request ile `main`'e girer.
 
 ## Açık kararlar
 
-- **Faz 3:** Yol haritası maddeleri (2026–2027) ve SSS soruları — taslak hazırlanıp onaya sunulacak.
 - **Faz 4:** İletişim formu için Web3Forms anahtarı (`.env` + GitHub secret).
 - **Faz 5:** İndirmeler için ayrı repolar önerisi (`mehpix/PyAI`, `mehpix/Quiz`) — onay bekliyor.
 - **Faz 5:** Bağlantı tablosundaki "Dijital Pin 11 (mz_ak)" ifadesi `Quiz.ino` ile doğrulanacak.
