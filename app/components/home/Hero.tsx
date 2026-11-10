@@ -48,10 +48,10 @@ export function Hero() {
         <div className="relative">
           <div aria-hidden className="absolute -inset-6 rounded-[2rem] bg-glow/15 blur-3xl" />
           <img
-            src="/images/mpx-logo.jpg"
+            src="/images/mpx-logo.webp"
             alt={h.logoAlt}
-            width={2816}
-            height={1536}
+            width={1280}
+            height={698}
             fetchPriority="high"
             className="relative w-full rounded-2xl border border-line neon-box"
           />

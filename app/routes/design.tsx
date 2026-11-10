@@ -135,7 +135,7 @@ export default function Design() {
           <Demo title={c.cards}>
             <div className="grid gap-6 md:grid-cols-2">
               <ProjectCard
-                image="/images/mpx-logo.jpg"
+                image="/images/pyai-logo.webp"
                 title={t.projects.pyai.title}
                 tags={[t.projects.pyai.tag, "Python"]}
                 body={t.projects.pyai.body}
@@ -143,7 +143,7 @@ export default function Design() {
                 cta={c.details}
               />
               <ProjectCard
-                image="/images/quiz-logo.jpg"
+                image="/images/quiz-logo.webp"
                 title={t.projects.quiz.title}
                 tags={[t.projects.quiz.tag, "C++"]}
                 body={t.projects.quiz.body}

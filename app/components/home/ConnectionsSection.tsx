@@ -35,7 +35,7 @@ export function ConnectionsSection() {
         <Group title={s.personal}>
           <LinkCard
             href={LINKS.mehbur07}
-            logo="/images/mehbur-logo.jpg"
+            logo="/images/mehbur-logo.webp"
             name="mehbur07-site"
             body={s.mehbur}
             badge={

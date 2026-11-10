@@ -70,8 +70,8 @@ export function ProjectHero({ projectKey }: { projectKey: ProjectKey }) {
         <img
           src={project.image}
           alt=""
-          width={1600}
-          height={900}
+          width={1280}
+          height={720}
           className="w-full rounded-2xl border border-line object-cover neon-box aspect-[16/9]"
         />
       </Container>
