@@ -1,6 +1,6 @@
-import { Link } from "react-router";
-
 import type { Route } from "./+types/home";
+import { LangSwitch } from "~/components/layout/LangSwitch";
+import { ThemeToggle } from "~/components/layout/ThemeToggle";
 import { getDictionary, getLang, useI18n } from "~/i18n";
 
 // Sayfa başlığı ve açıklaması (sekme adı, arama motoru ve paylaşım önizlemesi).
@@ -18,44 +18,39 @@ export function meta({ location }: Route.MetaArgs) {
   ];
 }
 
-// Faz 1: geçici "yapım aşamasında" sayfası. Asıl ana sayfa Faz 3'te gelecek.
+// Geçici "yapım aşamasında" sayfası. Asıl ana sayfa Faz 3'te gelecek.
 export default function Home() {
-  const { lang, t } = useI18n();
+  const { t } = useI18n();
   const c = t.construction;
 
   return (
     <main className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden px-4 py-16 text-center">
-      {/* Arka plandaki hafif neon parıltı */}
+      {/* Arka plan: ızgara dokusu ve hafif neon parıltı */}
+      <div aria-hidden className="bg-grid pointer-events-none absolute inset-0" />
       <div
         aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/2 size-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-neon/10 blur-3xl"
+        className="pointer-events-none absolute top-1/2 left-1/2 size-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-glow/10 blur-3xl"
       />
+
+      {/* Sağ üst: dil ve tema düğmeleri */}
+      <div className="absolute top-4 right-4 flex items-center gap-2">
+        <LangSwitch />
+        <ThemeToggle />
+      </div>
 
       <img
         src="/images/mpx-logo.jpg"
         alt="MehPiX logosu"
         width={2816}
         height={1536}
-        className="relative w-full max-w-md rounded-2xl"
+        className="relative w-full max-w-md rounded-2xl border border-line"
       />
 
-      <p className="relative mt-10 font-mono text-xs uppercase tracking-[0.3em] text-neon">
+      <p className="relative mt-10 font-mono text-xs tracking-[0.3em] text-accent uppercase">
         {c.eyebrow}
       </p>
-      <h1 className="relative mt-4 max-w-2xl text-3xl font-bold sm:text-5xl">
-        {c.title}
-      </h1>
-      <p className="relative mt-5 max-w-xl text-base text-slate-400 sm:text-lg">
-        {c.body}
-      </p>
-
-      <Link
-        to={lang === "en" ? "/" : "/en"}
-        hrefLang={lang === "en" ? "tr" : "en"}
-        className="relative mt-10 rounded-full border border-neon/40 px-5 py-2 text-sm text-neon transition hover:bg-neon/10"
-      >
-        {c.switchLabel}
-      </Link>
+      <h1 className="relative mt-4 max-w-2xl text-3xl font-bold sm:text-5xl">{c.title}</h1>
+      <p className="relative mt-5 max-w-xl text-base text-muted sm:text-lg">{c.body}</p>
     </main>
   );
 }
