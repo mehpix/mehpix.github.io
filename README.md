@@ -4,8 +4,8 @@ MehPiX'in resmi web sitesi. Stüdyonun projelerini (PyAI, Quiz), iş birliklerin
 ekibin kişisel sitelerini ve iletişim bilgilerini tanıtır.
 
 - **Yayın adresi:** https://mehpix.github.io
-- **Durum:** Faz 6 tamamlandı — tüm sayfalar Türkçe ve İngilizce yayında; PyAI ve Quiz indirilebiliyor;
-  site içi arama (⌘K / Ctrl+K) çalışıyor.
+- **Durum:** Faz 7 tamamlandı — tüm sayfalar Türkçe ve İngilizce yayında; PyAI ve Quiz indirilebiliyor;
+  site içi arama (⌘K / Ctrl+K) çalışıyor; SEO, favicon ve görsel optimizasyonu yapıldı.
   Bileşen vitrini: https://mehpix.github.io/tasarim (arama motorlarına kapalı).
   Planın tamamı için [ROADMAP.md](ROADMAP.md) dosyasına bakın.
 
@@ -30,7 +30,7 @@ pnpm install     # bağımlılıkları kur
 pnpm dev         # geliştirme sunucusunu başlat (http://localhost:5173)
 pnpm lint        # kod kalite kontrolü
 pnpm typecheck   # TypeScript tip kontrolü
-pnpm build       # yayına hazır dosyaları build/client/ klasörüne üret
+pnpm build       # yayına hazır dosyaları build/client/ klasörüne üret (+ sitemap.xml, 404.html)
 pnpm preview     # derlenmiş siteyi yerelde önizle
 ```
 
@@ -81,6 +81,18 @@ uygulamasını mesaj hazır şekilde açar.
 `main` branch'ine her merge'de [.github/workflows/deploy.yml](.github/workflows/deploy.yml)
 çalışır: lint, tip kontrolü ve derleme geçerse site https://mehpix.github.io adresine yayınlanır.
 Pull Request'lerde aynı kontroller çalışır ama yayın yapılmaz.
+
+## SEO ve paylaşım önizlemesi
+
+- Her sayfada başlık, açıklama, asıl adres (canonical), TR/EN eşleştirmesi (hreflang),
+  Open Graph ve X kartı etiketleri [app/lib/meta.ts](app/lib/meta.ts) ile üretilir.
+- Link paylaşıldığında görünen görsel: [public/og-image.jpg](public/og-image.jpg) (1200×630).
+- Ana sayfada arama motorları için kurum bilgisi (JSON-LD) bulunur.
+- `pnpm build` sonunda [scripts/postbuild.ts](scripts/postbuild.ts) çalışır: `sitemap.xml`
+  (`/tasarim` hariç tüm sayfalar) ve GitHub Pages'in 404 sayfası (`404.html`) üretilir.
+- [public/robots.txt](public/robots.txt) arama motorlarına site haritasının yerini gösterir.
+- Sekme ikonu `public/favicon.ico`, telefon ana ekranı ikonu `public/apple-touch-icon.png`.
+- Görseller WebP formatındadır (her biri 60 KB'ın altında); yeni görsel eklerken de WebP kullanın.
 
 ## Dil desteği
 
@@ -146,7 +158,9 @@ app/
   lib/theme.ts     Koyu/açık tema yönetimi
   i18n/            Türkçe ve İngilizce metinler
   app.css          Renk değişkenleri, fontlar ve genel stiller (Tailwind)
-public/images/     Logolar ve görseller
+public/            favicon, paylaşım görseli (og-image.jpg), robots.txt
+public/images/     Logolar ve görseller (WebP)
+scripts/           Derleme sonrası adımlar (sitemap.xml, 404.html)
 .github/workflows/ Otomatik derleme ve yayın
 ROADMAP.md         Proje yol haritası ve fazlar
 PROGRESS.md        Oturumlar arası ilerleme notları

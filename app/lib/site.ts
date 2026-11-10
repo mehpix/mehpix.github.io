@@ -6,6 +6,6 @@ export const CONTACT_EMAIL = "mehburlopix0731@gmail.com";
 
 export const LINKS = {
   microcore: "https://microcore.lovable.app/",
-  mehbur07: "https://mehbur07.lovable.app/",
+  mehbur07: "https://mehbur07.github.io/",
   github: "https://github.com/mehpix",
 } as const;

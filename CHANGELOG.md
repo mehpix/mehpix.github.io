@@ -19,3 +19,5 @@ sürümler [Semantic Versioning](https://semver.org/lang/tr/) kurallarını izle
 - 404 ekranı menü, footer ve önerilen sayfa bağlantılarıyla yenilendi; Quiz açıklaması kodla uyumlu olacak şekilde "matematik yarışması" olarak düzeltildi.
 - PyAI ve Quiz artık indirilebiliyor: dosyalar mehpix/PyAI ve mehpix/Quiz repolarının Releases sayfalarında; proje sayfalarına İndir/GitHub butonları, SHA-256 doğrulama ve Windows uyarısı notu eklendi.
 - Site içi arama eklendi: menüdeki "Ara" butonu veya ⌘K / Ctrl+K ile sayfalar, projeler ve SSS soruları aranabiliyor; SSS sonuçları ilgili soruyu açık getiriyor.
+- Yayın öncesi cila: favicon ve telefon ikonu, link paylaşımında çıkan önizleme görseli, sitemap.xml, robots.txt ve arama motorları için asıl adres/dil etiketleri eklendi.
+- Logolar WebP'ye çevrilip ~2 MB'tan 60 KB'ın altına indirildi; PyAI kendi logosuna kavuştu, Mehbur07 bağlantısı yeni adresine (mehbur07.github.io) güncellendi.

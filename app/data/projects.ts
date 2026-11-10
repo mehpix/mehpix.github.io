@@ -26,7 +26,7 @@ export const PROJECTS = [
   {
     key: "pyai",
     page: "projectPyai",
-    image: "/images/mpx-logo.jpg",
+    image: "/images/pyai-logo.webp",
     status: "live",
     category: "app",
     tech: ["Python"],
@@ -43,7 +43,7 @@ export const PROJECTS = [
   {
     key: "quiz",
     page: "projectQuiz",
-    image: "/images/quiz-logo.jpg",
+    image: "/images/quiz-logo.webp",
     status: "live",
     category: "hardware",
     tech: ["C++"],

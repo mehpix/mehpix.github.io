@@ -2,6 +2,22 @@
 
 ### [2026-11-10 - Mehbur07]
 - **Yapılanlar & Kararlar:**
+  - Faz 7 (`chore/launch-polish`): favicon + apple-touch-icon (MPX logosu), 1200×630 OG görseli, canonical + hreflang (x-default dahil) + X kartı etiketleri, ana sayfada Organization JSON-LD
+  - `scripts/postbuild.ts`: `pnpm build` sonunda sitemap.xml (14 adres, `/tasarim` hariç) ve 404.html üretiliyor; deploy.yml'deki `cp` adımı buraya taşındı. robots.txt eklendi
+  - Logolar WebP'ye çevrildi (~2 MB → 5–58 KB); PyAI artık kendi logosunu (`pyai-logo.webp`) kullanıyor, MPX logosu yalnızca ana sayfada
+  - /projeler sayfasında başlık sırası düzeltildi (h1 → h2); Mehbur07 bağlantısı `mehbur07.github.io` oldu
+  - Kontroller: typecheck, lint, build temiz; /projeler ve /projeler/pyai headless Edge ekran görüntüsüyle doğrulandı
+- **Son Commit:** 693457d Merge pull request #6 from mehpix/feature/search
+- **Aktif Branch:** main
+- **Sıradaki İlk İş (Next Action):** Yayındaki siteyi kontrol et (favicon, PyAI logosu, paylaşım önizlemesi); kullanıcı onaylarsa v1.0.0 tag'i at ve CHANGELOG'u sürüm başlığına taşı
+- **Bilinen Sorunlar / Dikkat Edilmesi Gerekenler:**
+  - PyAI logosunun arka planında yapay zekânın uydurduğu anlamsız komutlar var (`Clown`, `Get-Malggle`); kullanıcı isterse temiz sürümle değiştirilecek
+  - Dependabot: minimatch (orta) hâlâ açık — yalnızca ESLint geliştirme aracında, siteye girmiyor
+  - Quiz.ino düzeltmesi hâlâ derlenerek doğrulanmadı
+  - `.vscode/settings.json` takip edilmiyor (kullanıcının editör ayarı)
+
+### [2026-11-10 - Mehbur07]
+- **Yapılanlar & Kararlar:**
   - Faz 6 (`feature/search`): ⌘K / Ctrl+K arama penceresi (`app/components/search/Search.tsx`), menüde "Ara" butonu (mobilde yalnızca ikon)
   - İndeks sözlükten üretiliyor (`app/lib/search.ts`): 7 sayfa + 2 proje + tüm SSS; Türkçe karakter duyarsız eşleştirme, başlık eşleşmesi öne çıkıyor
   - Tarayıcının `<dialog>` öğesi kullanıldı (Esc, odak tuzağı, arka plan etkileşimsiz); combobox/listbox ARIA, ekran okuyucuya sonuç sayısı duyurusu

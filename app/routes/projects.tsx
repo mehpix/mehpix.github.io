@@ -59,7 +59,7 @@ export default function Projects() {
           </p>
         </div>
         <div className="mt-8">
-          <ProjectList projects={visible} />
+          <ProjectList projects={visible} headingLevel="h2" />
         </div>
       </Container>
     </>
