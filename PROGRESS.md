@@ -2,6 +2,22 @@
 
 ### [2026-11-10 - Mehbur07]
 - **Yapılanlar & Kararlar:**
+  - PR #10 (süzülen `</>` kutucukları) yayına çıktı ama kullanıcı mehbur07 sitesindeki (m07-site) parçacık ağının aynısını, `</>` ikonuyla ve neon cyan istedi
+  - `feature/code-particle-network`: `FloatingCode` + `.floating-code`/`code-drift` CSS kaldırıldı; yerine `CodeNetwork` (canvas). Mantık m07-site `assets/js/main.js` → `startParticles` ile aynı: rastgele yön/hız, kenardan sarma, `LINK` mesafesinde solan çizgiler
+  - Farklar: noktalar yerine önceden parlamasıyla çizilmiş `</>` sprite'ı; çizgiler ikon kenarında bitiyor; en fazla 45 ikon (14000 px²'ye bir); `LINK=160`; açık temada koyu camgöbeği; sekme gizliyken duruyor; yeniden boyutlanmada ağ baştan kurulmuyor
+  - Kontroller: koyu/açık tema ve 390 px mobil headless Edge ile doğrulandı; typecheck, lint, build temiz
+- **Son Commit:** 38b2825 Merge pull request #10 from mehpix/feature/floating-code-icons
+- **Aktif Branch:** main
+- **Sıradaki İlk İş (Next Action):** Kullanıcı canlıda ağı ve sekmedeki MPX ikonunu onaylasın; sonra v1.0.0 tag'i + CHANGELOG sürüm başlığı + GitHub Release
+- **Bilinen Sorunlar / Dikkat Edilmesi Gerekenler:**
+  - Yoğunluk/parlaklık kullanıcı zevkine göre `CodeNetwork.tsx` başındaki sabitlerden ayarlanabilir
+  - PyAI kodu ileride yayınlanırsa Hakkımızda metni "Projelerimiz açık kaynaklıdır" olarak güncellenebilir
+  - PyAI logosunun arka planında anlamsız komutlar var (`Clown`, `Get-Malggle`)
+  - Dependabot: minimatch (orta) — yalnızca ESLint geliştirme aracında
+  - `.vscode/settings.json` takip edilmiyor (kullanıcının editör ayarı)
+
+### [2026-11-10 - Mehbur07]
+- **Yapılanlar & Kararlar:**
   - PR #9 (Hakkımızda açık kaynak paragrafı) merge edildi ve yayında
   - `feature/floating-code-icons`: `FloatingCode` bileşeni `_site.tsx` düzenine eklendi; 10 neon `</>` kutucuğu (mobilde 4) sabit konumlardan `code-drift` animasyonuyla dolaşıyor
   - Okunabilirlik için kutucuklar kenarlarda; ortaya yakın 3 tanesi `floating-code-faint` ile daha soluk. Konumlar rastgele değil (prerender ile hydration uyumu)
