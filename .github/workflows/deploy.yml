@@ -41,9 +41,7 @@ jobs:
         env:
           VITE_WEB3FORMS_KEY: ${{ secrets.WEB3FORMS_KEY }}
 
-      # GitHub Pages bilinmeyen adreslerde 404.html gösterir; bunu React Router'ın
-      # SPA yedek sayfasıyla değiştirerek 404 ekranını uygulamanın çizmesini sağlarız.
-      - run: cp build/client/__spa-fallback.html build/client/404.html
+      # 404.html ve sitemap.xml, "pnpm build" sonunda scripts/postbuild.ts ile üretilir.
 
       - uses: actions/upload-pages-artifact@v5
         if: github.event_name != 'pull_request'

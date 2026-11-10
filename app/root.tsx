@@ -23,6 +23,12 @@ import { ButtonLink } from "./components/ui/Button";
 // <head> içindeki küçük betik bunu sayfa çizilmeden önce değiştirir.
 // suppressHydrationWarning: bu betiğin yaptığı değişikliği React'in
 // "uyuşmazlık" olarak raporlamasını engeller.
+// Sekme ikonu (favicon) ve telefon ana ekranı ikonu tüm sayfalarda geçerlidir.
+export const links: Route.LinksFunction = () => [
+  { rel: "icon", href: "/favicon.ico", sizes: "32x32" },
+  { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
+];
+
 export function Layout({ children }: { children: React.ReactNode }) {
   const { pathname } = useLocation();
   return (
