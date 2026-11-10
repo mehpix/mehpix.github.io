@@ -11,3 +11,5 @@ sürümler [Semantic Versioning](https://semver.org/lang/tr/) kurallarını izle
 - MehPiX, Mehbur07, MicroCore ve Quiz logoları ile Quiz bağlantı tablosu projeye eklendi.
 - React Router + Vite + Tailwind iskeleti kuruldu; Türkçe/İngilizce "yapım aşamasında" sayfası ve 404 ekranı eklendi.
 - main'e her merge'de siteyi kontrol edip GitHub Pages'e yayınlayan otomatik iş akışı eklendi.
+- Neon renk paleti, koyu/açık tema, siteyle birlikte barındırılan fontlar ve ortak bileşenler (menü, canlı saatli footer, buton, kart, rozet, bölüm başlığı) eklendi.
+- Bileşenlerin görülebildiği `/tasarim` vitrin sayfası eklendi; ana sayfaya tema ve dil düğmeleri geldi.

@@ -1,15 +1,148 @@
 @import "tailwindcss";
 
-/* Geçici temel stil (Faz 1). Renk paleti, fontlar ve açık tema Faz 2'de
-   tasarım sistemiyle birlikte genişletilecek. */
-@theme {
-  --font-sans: ui-sans-serif, system-ui, "Segoe UI", Roboto, sans-serif;
-  --color-ink: #05080d;
-  --color-neon: #22e3ff;
+/* Fontlar sitenin kendi dosyalarından yüklenir (Google'a istek gitmez).
+   Üçü de Türkçe karakterleri (ğ, ş, ı, İ, ç, ö, ü) destekler. */
+@import "@fontsource-variable/space-grotesk";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/jetbrains-mono";
+
+/* "dark:" sınıfları, sistem ayarına değil <html data-theme="dark"> değerine bakar.
+   Böylece kullanıcı temayı düğmeyle değiştirebilir. */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+/* ------------------------------------------------------------------
+   RENK DEĞİŞKENLERİ (tasarım token'ları)
+   Bileşenler doğrudan renk kodu kullanmaz; bu değişkenleri kullanır.
+   Tema değişince yalnızca bu değerler değişir.
+   ------------------------------------------------------------------ */
+
+/* Açık tema: neon camgöbeği beyaz zeminde okunmadığı için metin vurgusu
+   koyulaştırılmış bir ton kullanır (WCAG AA kontrastı ≥ 4.5:1). */
+:root {
+  --bg: #f5fafb;
+  --surface: #ffffff;
+  --surface-2: #eaf4f6;
+  --line: #d3e5ea;
+  --fg: #071a21;
+  --muted: #4b6670;
+  --accent: #0a7f99;
+  --accent-strong: #06647a;
+  --accent-ink: #ffffff;
+  --glow: #22e3ff;
+  --glow-strength: 0.35;
+  --success: #0f7a4a;
+  --warning: #9a5b00;
+  color-scheme: light;
 }
 
-html,
-body {
-  @apply bg-ink text-slate-100 antialiased;
+/* Koyu neon tema (varsayılan). Arka plan logodaki koyu petrol tonundan,
+   vurgu rengi logodaki neon camgöbeğinden alınmıştır. */
+:root[data-theme="dark"] {
+  --bg: #04090d;
+  --surface: #0a141b;
+  --surface-2: #0f1d26;
+  --line: #16303b;
+  --fg: #e6f7fb;
+  --muted: #8aa5ae;
+  --accent: #22e3ff;
+  --accent-strong: #7ff1ff;
+  --accent-ink: #021015;
+  --glow: #22e3ff;
+  --glow-strength: 1;
+  --success: #3ee08f;
+  --warning: #ffc04d;
   color-scheme: dark;
+}
+
+/* Değişkenleri Tailwind sınıflarına bağlar: bg-bg, bg-surface, text-fg,
+   text-muted, border-line, text-accent, bg-accent ... */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-ink: var(--accent-ink);
+  --color-glow: var(--glow);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+}
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", "Inter Variable", ui-sans-serif, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, "Cascadia Code", monospace;
+}
+
+/* ------------------------------------------------------------------
+   TEMEL STİLLER
+   ------------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg font-sans text-fg antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display tracking-tight;
+  }
+
+  /* Klavyeyle gezinen kullanıcılar için belirgin odak çerçevesi */
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--glow) 35%, transparent);
+  }
+
+  /* Hareket hassasiyeti olan kullanıcılar için animasyonları kapatır */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------
+   NEON YARDIMCI SINIFLARI
+   --glow-strength açık temada düşük, koyu temada tamdır; böylece aynı
+   sınıf iki temada da abartısız görünür.
+   ------------------------------------------------------------------ */
+@utility neon-text {
+  text-shadow:
+    0 0 calc(6px * var(--glow-strength)) color-mix(in oklab, var(--glow) 70%, transparent),
+    0 0 calc(18px * var(--glow-strength)) color-mix(in oklab, var(--glow) 45%, transparent);
+}
+
+@utility neon-box {
+  box-shadow:
+    0 0 0 1px color-mix(in oklab, var(--glow) 45%, transparent),
+    0 0 calc(24px * var(--glow-strength)) color-mix(in oklab, var(--glow) 22%, transparent);
+}
+
+/* Arka plan ızgarası: hero ve vitrin bölümlerinde hafif teknolojik doku */
+@utility bg-grid {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--line) 70%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--line) 70%, transparent) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
 }
