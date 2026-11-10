@@ -9,19 +9,31 @@ import { Section } from "./Section";
 // Sözlükteki değerlerle aynı sırada: Gizlilik, Sadelik, Merak, Paylaşım
 const ICONS = [LockIcon, BoltIcon, CompassIcon, CodeIcon];
 
-/** "Neden MehPiX? / 02": kısa tanıtım ve dört değer kartı. */
-export function ValuesSection() {
+/**
+ * "Neden biz? / 02": kısa tanıtım ve dört değer kartı.
+ * Hakkımızda sayfasında da kullanılır; orada bölüm numarası ve id farklıdır.
+ */
+export function ValuesSection({
+  index = "02",
+  id = HOME_SECTIONS.about,
+  subtitle,
+}: {
+  index?: string;
+  id?: string;
+  /** Verilirse sözlükteki tanıtım metninin yerine kullanılır */
+  subtitle?: string;
+}) {
   const { t } = useI18n();
   const s = t.home.values;
 
   return (
-    <Section id={HOME_SECTIONS.about} labelledBy="hakkimizda-baslik">
+    <Section id={id} labelledBy="degerler-baslik">
       <SectionHeader
-        id="hakkimizda-baslik"
+        id="degerler-baslik"
         eyebrow={s.eyebrow}
-        index="02"
+        index={index}
         title={s.title}
-        subtitle={s.subtitle}
+        subtitle={subtitle ?? s.subtitle}
       />
       <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {s.items.map((item, i) => {

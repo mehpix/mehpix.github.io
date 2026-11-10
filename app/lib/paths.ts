@@ -6,6 +6,8 @@ import type { Lang } from "~/i18n";
 export const PAGES = {
   home: { tr: "/", en: "/en" },
   projects: { tr: "/projeler", en: "/en/projects" },
+  projectPyai: { tr: "/projeler/pyai", en: "/en/projects/pyai" },
+  projectQuiz: { tr: "/projeler/quiz", en: "/en/projects/quiz" },
   about: { tr: "/hakkimizda", en: "/en/about" },
   contact: { tr: "/iletisim", en: "/en/contact" },
   faq: { tr: "/sss", en: "/en/faq" },
@@ -14,15 +16,13 @@ export const PAGES = {
 
 export type PageKey = keyof typeof PAGES;
 
+/** Sitenin yayın adresi (paylaşım önizlemeleri ve dil alternatifleri için). */
+export const SITE_URL = "https://mehpix.github.io";
+
 /** Bir sayfanın verilen dildeki adresini döndürür. */
 export function pathFor(page: PageKey, lang: Lang): string {
   return PAGES[page][lang];
 }
-
-// Yayında olan sayfalar. Henüz yapılmamış bir sayfaya verilen bağlantılar
-// 404'e gitmek yerine ana sayfadaki ilgili bölüme yönlenir (aşağıdaki
-// HOME_SECTIONS). Faz 4'te sayfalar eklendikçe buraya yazılır.
-const READY_PAGES: ReadonlySet<PageKey> = new Set(["home", "design"]);
 
 /** Ana sayfadaki bölümlerin id'leri (her iki dilde aynı). */
 export const HOME_SECTIONS = {
@@ -30,28 +30,22 @@ export const HOME_SECTIONS = {
   about: "hakkimizda",
   faq: "sss",
   contact: "iletisim",
-} as const satisfies Partial<Record<PageKey, string>>;
-
-/**
- * Menü ve butonlarda kullanılacak bağlantı adresi.
- * Sayfa hazırsa kendi adresini, değilse ana sayfadaki karşılık gelen
- * bölümü ("/#projeler", "/en#projeler") döndürür.
- */
-export function linkFor(page: PageKey, lang: Lang): string {
-  if (READY_PAGES.has(page)) return pathFor(page, lang);
-  const section = (HOME_SECTIONS as Partial<Record<PageKey, string>>)[page];
-  return section ? `${pathFor("home", lang)}#${section}` : pathFor("home", lang);
-}
+} as const;
 
 /** Sondaki "/" işaretini atar ("/en/" → "/en"); kök "/" olduğu gibi kalır. */
 function normalize(pathname: string): string {
   return pathname.length > 1 ? pathname.replace(/\/+$/, "") : pathname;
 }
 
-/** Adresi verilen sayfa ile eşleşiyor mu? (Menüde aktif bağlantıyı işaretlemek için) */
+/**
+ * Adres verilen sayfa ile eşleşiyor mu? (Menüde aktif bağlantıyı işaretlemek için)
+ * Alt sayfalar da sayılır: "/projeler/pyai" açıkken "Projeler" aktif görünür.
+ */
 export function isActive(page: PageKey, pathname: string): boolean {
   const current = normalize(pathname);
-  return Object.values(PAGES[page]).some((p) => p === current);
+  return Object.values(PAGES[page]).some(
+    (p) => p === current || (page !== "home" && current.startsWith(`${p}/`)),
+  );
 }
 
 /**

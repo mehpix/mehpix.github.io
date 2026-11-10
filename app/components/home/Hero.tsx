@@ -1,5 +1,5 @@
 import { useI18n } from "~/i18n";
-import { HOME_SECTIONS, linkFor } from "~/lib/paths";
+import { HOME_SECTIONS, pathFor } from "~/lib/paths";
 
 import { ArrowDownIcon, ArrowRightIcon } from "../icons";
 import { ButtonLink } from "../ui/Button";
@@ -35,10 +35,10 @@ export function Hero() {
           </h1>
           <p className="mt-7 max-w-xl text-lg text-muted">{h.body}</p>
           <div className="mt-10 flex flex-wrap gap-3">
-            <ButtonLink href={linkFor("projects", lang)} size="lg">
+            <ButtonLink href={pathFor("projects", lang)} size="lg">
               {h.primary} <ArrowRightIcon />
             </ButtonLink>
-            <ButtonLink href={linkFor("about", lang)} variant="outline" size="lg">
+            <ButtonLink href={pathFor("about", lang)} variant="outline" size="lg">
               {h.secondary}
             </ButtonLink>
           </div>

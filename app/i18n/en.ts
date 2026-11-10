@@ -119,7 +119,7 @@ export const en: Dictionary = {
         {
           date: "2026",
           title: "Quiz (Arduino)",
-          body: "Our first project combining software and hardware: a quiz game with an LCD screen, buttons and sound.",
+          body: "Our first project combining software and hardware: an arithmetic quiz game with an LCD screen, buttons and sound.",
           status: "done",
         },
         {
@@ -155,24 +155,7 @@ export const en: Dictionary = {
     faq: {
       eyebrow: "Good to know",
       title: "Frequently asked questions",
-      items: [
-        {
-          q: "What is MehPiX?",
-          a: "MehPiX is a software studio founded on 24 May 2026. We aim to build software that could change the world, from desktop apps to Arduino projects.",
-        },
-        {
-          q: "Where does PyAI store my chats?",
-          a: "Your chats and what PyAI learns are stored only on your own computer, in a folder next to the program.",
-        },
-        {
-          q: "How can I download the projects?",
-          a: "Downloads are coming to this site very soon. PyAI will come as a single .exe file; Quiz's Arduino code and circuit diagram will be shared in a .zip file.",
-        },
-        {
-          q: "How can I contact you?",
-          a: "Send us an email with your project ideas, partnership offers or questions. You will find our address in the contact section at the bottom of this page.",
-        },
-      ],
+      more: "See all questions",
     },
     cta: {
       eyebrow: "Let's get started",
@@ -180,6 +163,285 @@ export const en: Dictionary = {
       body: "You can always write to us about project ideas, partnerships and questions.",
       mail: "Send an Email",
       projects: "Explore Projects",
+    },
+  },
+  faq: {
+    groups: [
+      {
+        title: "General",
+        items: [
+          {
+            q: "What is MehPiX?",
+            a: "MehPiX is a software studio founded on 24 May 2026. We aim to build software that could change the world, from desktop apps to Arduino projects.",
+          },
+          {
+            q: "What do you work on?",
+            a: "For now we build desktop software (PyAI) and hardware projects with Arduino (Quiz). We keep working on new projects in AI and hardware.",
+          },
+        ],
+      },
+      {
+        title: "PyAI",
+        items: [
+          {
+            q: "Where does PyAI store my chats?",
+            a: "Your chats and what PyAI learns are stored only on your own computer, in a folder next to the program.",
+          },
+          {
+            q: "Which systems does PyAI run on?",
+            a: "PyAI comes as a single .exe file for Windows (about 9 MB). It needs no installation; just run the file.",
+          },
+        ],
+      },
+      {
+        title: "Quiz",
+        items: [
+          {
+            q: "What do I need to build Quiz?",
+            a: "An Arduino Uno, a 16x2 LCD screen with an I2C module, 5 buttons, a buzzer, a breadboard and jumper wires. The wiring table on the Quiz page shows where each wire goes.",
+          },
+          {
+            q: "How do I play Quiz?",
+            a: "The D2 button starts the game. You have 20 seconds for each arithmetic question; pick your answer with the A, B or C button, and each correct answer is worth 10 points. A short press on D2 skips a question; holding it for 3 seconds pauses the game.",
+          },
+        ],
+      },
+      {
+        title: "Downloads",
+        items: [
+          {
+            q: "How can I download the projects?",
+            a: "Downloads are coming to this site very soon. PyAI will come as a single .exe file; Quiz's Arduino code and circuit diagram will be shared in a .zip file.",
+          },
+        ],
+      },
+      {
+        title: "Contact",
+        items: [
+          {
+            q: "How can I contact you?",
+            a: "Fill in the form on the contact page or send us an email directly.",
+          },
+          {
+            q: "Can I propose a partnership?",
+            a: "Of course. We are open to project ideas and partnership offers; write to us from the contact page.",
+          },
+        ],
+      },
+    ],
+  },
+  pages: {
+    projects: {
+      meta: {
+        title: "Projects — MehPiX",
+        description: "MehPiX projects: PyAI, a chatbot for Windows, and Quiz, an arithmetic quiz game running on Arduino.",
+      },
+      eyebrow: "Portfolio",
+      title: "Our Projects",
+      subtitle: "From software to hardware, everything we are working on.",
+      filterLabel: "Filter by category",
+      filters: {
+        all: "All",
+        app: "App",
+        hardware: "Hardware",
+      },
+      count: "Showing {n} projects",
+      details: "View",
+    },
+    project: {
+      back: "All projects",
+      downloadSoon: "Download coming soon",
+      features: "Features",
+      facts: "Details",
+      platform: "Platform",
+      language: "Language",
+      status: "Status",
+    },
+    pyai: {
+      meta: {
+        title: "PyAI — MehPiX",
+        description: "PyAI: a Windows chatbot that opens from a single file and keeps your chats on your own computer.",
+      },
+      intro:
+        "PyAI is MehPiX's first project. This chatbot needs no installation: open it from a single file and start talking. Your chats and what PyAI learns are stored only on your own computer, in a folder next to the program.",
+      features: [
+        { title: "Single file", body: "No installation: just run PyAI.exe." },
+        { title: "Stays on your computer", body: "Chats are stored in a folder next to the program, on your own computer." },
+        { title: "Learns", body: "It keeps what it learns on your computer, together with your chats." },
+        { title: "Built with Python", body: "PyAI is written in Python, which also gave it its name." },
+      ],
+      platform: "Windows",
+      file: "File",
+      fileValue: "PyAI.exe · about 9 MB",
+    },
+    quiz: {
+      meta: {
+        title: "Quiz (Arduino) — MehPiX",
+        description: "Quiz: an arithmetic quiz game on Arduino Uno with an LCD screen, buttons and sound. Parts list and wiring table.",
+      },
+      intro:
+        "Quiz is our first project combining software and hardware. Running on an Arduino Uno, this arithmetic quiz shows addition, subtraction, multiplication and division questions on a 16x2 LCD screen. You pick the answer with one of three buttons, while a buzzer plays the countdown, right and wrong sounds, and background music.",
+      features: [
+        { title: "Four operations", body: "Addition, subtraction, multiplication and division questions are generated at random, so every game is different." },
+        { title: "Time and score", body: "20 seconds per question; a correct answer is worth 10 points. It beeps during the last 5 seconds." },
+        { title: "Sound and music", body: "A start melody, right/wrong sounds and background music you can switch on and off." },
+        { title: "Skip and pause", body: "Skip a hard question, or pause the game and resume whenever you like." },
+      ],
+      howTo: {
+        title: "How to play",
+        steps: [
+          "Power the Arduino: after a welcome message the screen shows \"Baslamak Icin Butona Bas\" (press the button to start).",
+          "Press the D2 button; the start melody plays and the first question appears.",
+          "You have 20 seconds for each question. The timer counts down in the top right corner and beeps during the last 5 seconds.",
+          "Pick your answer with button A (D8), B (D9) or C (D10). A correct answer is worth 10 points; after a wrong one the correct answer is shown.",
+          "Press D2 briefly to skip a question, or hold it for 3 seconds to pause and resume the game.",
+          "The music button (D11) turns the background music on and off. After 100 questions your total score appears on the screen.",
+        ],
+      },
+      parts: {
+        title: "Parts you need",
+        items: [
+          "Arduino Uno",
+          "16x2 LCD screen (with I2C module, address 0x27)",
+          "5 buttons (4 game buttons + 1 music button)",
+          "Buzzer or small speaker",
+          "Breadboard and jumper wires",
+        ],
+        library: "The code uses the LiquidCrystal_I2C library, which you can install from the Library Manager in the Arduino IDE.",
+      },
+      wiring: {
+        title: "Wiring table",
+        subtitle: "Which Arduino pin each component connects to. The buttons use the internal pull-up resistors, so no extra resistors are needed.",
+        image: "Open the table as an image",
+        headers: {
+          component: "Component",
+          pin: "Component pin",
+          arduino: "Arduino pin",
+          note: "Description",
+        },
+        groups: [
+          {
+            component: "LCD screen (I2C)",
+            rows: [
+              { pin: "GND", arduino: "GND", note: "Ground" },
+              { pin: "VCC", arduino: "5V", note: "Supply voltage" },
+              { pin: "SDA", arduino: "A4 (SDA)", note: "I2C data line (Uno)" },
+              { pin: "SCL", arduino: "A5 (SCL)", note: "I2C clock line (Uno)" },
+            ],
+          },
+          {
+            component: "Button 1 (D2)",
+            rows: [
+              { pin: "First leg", arduino: "Digital pin 2", note: "Start; short press: skip, long press: pause" },
+              { pin: "Other leg", arduino: "GND", note: "" },
+            ],
+          },
+          {
+            component: "Button 2 (D8)",
+            rows: [
+              { pin: "First leg", arduino: "Digital pin 8", note: "Option A" },
+              { pin: "Other leg", arduino: "GND", note: "" },
+            ],
+          },
+          {
+            component: "Button 3 (D9)",
+            rows: [
+              { pin: "First leg", arduino: "Digital pin 9", note: "Option B" },
+              { pin: "Other leg", arduino: "GND", note: "" },
+            ],
+          },
+          {
+            component: "Button 4 (D10)",
+            rows: [
+              { pin: "First leg", arduino: "Digital pin 10", note: "Option C" },
+              { pin: "Other leg", arduino: "GND", note: "" },
+            ],
+          },
+          {
+            component: "Music button",
+            rows: [
+              { pin: "First leg", arduino: "Digital pin 11 (mz_ak)", note: "Music on/off" },
+              { pin: "Other leg", arduino: "GND", note: "" },
+            ],
+          },
+          {
+            component: "Buzzer / speaker",
+            rows: [
+              { pin: "Positive (+) leg", arduino: "Digital pin 6", note: "Sound effects and melodies (tone output)" },
+              { pin: "Negative (−) leg", arduino: "GND", note: "" },
+            ],
+          },
+        ],
+      },
+      platform: "Arduino Uno",
+      library: "Library",
+    },
+    about: {
+      meta: {
+        title: "About — MehPiX",
+        description: "Who is MehPiX and why do we code? Our story, our values and our roadmap.",
+      },
+      eyebrow: "About us",
+      title: "Who we are and why we code",
+      subtitle: "Hi, we are MehPiX. Our goal is to build software that could change the world.",
+      valuesSubtitle: "We work by these four principles.",
+      story: {
+        eyebrow: "Our story",
+        title: "We started small, with big goals",
+        paragraphs: [
+          "MehPiX was founded on 24 May 2026. Since then we have been writing code for one goal: building useful software that could change the world.",
+          "Our first project was PyAI, a chatbot that needs no installation and keeps your chats on your own computer. Then we brought software and hardware together and built Quiz, an arithmetic quiz game on Arduino with an LCD screen.",
+          "With every project we learn something new, and we share what we learn.",
+        ],
+      },
+      facts: [
+        { label: "Founded", value: "Active since 24 May 2026" },
+        { label: "Our focus", value: "Software development" },
+        { label: "Our vision", value: "Building software that could change the world" },
+      ],
+    },
+    contact: {
+      meta: {
+        title: "Contact — MehPiX",
+        description: "Write to MehPiX about project ideas, partnership offers and questions.",
+      },
+      eyebrow: "Let's get started",
+      title: "Contact",
+      subtitle: "Write to us about project ideas, partnership offers and questions.",
+      form: {
+        title: "Send us a message",
+        name: "Your name",
+        email: "Your email address",
+        subject: "Subject",
+        message: "Your message",
+        send: "Send Message",
+        sending: "Sending…",
+        success: "Your message has reached us. Thank you!",
+        error: "The message could not be sent. Please try again or email us directly.",
+        noteService: "The form delivers your message to our email address through the Web3Forms service. Your details are used only to reply to you.",
+        noteMail: "When you press Send, your email app opens with your message ready to go.",
+        mailSubject: "Message from the MehPiX website",
+      },
+      info: {
+        email: "Email",
+        github: "GitHub",
+        time: "Local time",
+        timeLabel: "Türkiye",
+      },
+    },
+    faq: {
+      meta: {
+        title: "Frequently Asked Questions — MehPiX",
+        description: "Frequently asked questions about MehPiX, PyAI, Quiz, downloads and contact.",
+      },
+      eyebrow: "Good to know",
+      title: "Frequently asked questions",
+      subtitle: "What people often ask about MehPiX and our projects.",
+      ask: {
+        title: "Can't find your answer here?",
+        body: "Write to us and we will get back to you.",
+        cta: "Get in Touch",
+      },
     },
   },
   projects: {
@@ -191,7 +453,7 @@ export const en: Dictionary = {
     quiz: {
       title: "Quiz",
       tag: "Arduino",
-      body: "A quiz game powered by Arduino: questions appear on an LCD screen, answers are picked with three buttons and a buzzer plays the sound effects.",
+      body: "An arithmetic quiz game on Arduino: questions appear on an LCD screen, answers are picked with three buttons, and a buzzer plays sound effects and music.",
     },
   },
   design: {
@@ -203,7 +465,7 @@ export const en: Dictionary = {
     title: "The MehPiX design language",
     subtitle:
       "Colors, typefaces and components used on every page of the site. Use the button at the top right to switch between light and dark themes.",
-    note: "This page is for development and is not indexed by search engines. Until phase 4, menu links go to the matching section on the home page.",
+    note: "This page is for development and is not indexed by search engines.",
     colors: {
       eyebrow: "Colors",
       title: "Color palette",
@@ -243,6 +505,7 @@ export const en: Dictionary = {
     title: "Page not found",
     body: "The page you are looking for may have moved or never existed.",
     home: "Back to home",
+    links: "You might be looking for:",
   },
   error: {
     title: "Something went wrong",
