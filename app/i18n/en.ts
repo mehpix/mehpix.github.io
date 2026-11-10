@@ -28,6 +28,63 @@ export const en: Dictionary = {
   lang: {
     label: "Language",
   },
+  search: {
+    open: "Search",
+    label: "Search the site",
+    placeholder: "Search pages, projects or questions…",
+    close: "Close",
+    suggestions: "Pages",
+    groups: {
+      pages: "Pages",
+      projects: "Projects",
+      faq: "Frequently asked questions",
+    },
+    results: "{n} results found",
+    empty: "No results for \"{q}\".",
+    emptyHint: "Try a different word or write to us.",
+    hints: {
+      navigate: "move",
+      select: "open",
+      close: "close",
+    },
+    pages: {
+      home: {
+        title: "Home",
+        text: "MehPiX software studio: projects, values, roadmap and partnerships.",
+        keywords: "home mehpix roadmap values numbers partnerships microcore mehbur07 personal sites",
+      },
+      projects: {
+        title: "Projects",
+        text: "All our projects: PyAI and Quiz.",
+        keywords: "portfolio app hardware download",
+      },
+      projectPyai: {
+        title: "PyAI",
+        text: "A single-file chatbot for Windows; download and file verification.",
+        keywords: "chatbot exe download windows smartscreen python",
+      },
+      projectQuiz: {
+        title: "Quiz (Arduino)",
+        text: "Arduino arithmetic quiz: how to play, parts list and wiring table.",
+        keywords: "arduino lcd button buzzer pin wiring table circuit diagram zip download c++",
+      },
+      about: {
+        title: "About",
+        text: "Our story, our values and our roadmap.",
+        keywords: "who we are story vision founded values roadmap",
+      },
+      contact: {
+        title: "Contact",
+        text: "Send us a message or an email.",
+        keywords: "email mail form message github partnership",
+      },
+      faq: {
+        title: "Frequently asked questions",
+        text: "Questions about MehPiX, PyAI, Quiz and downloads.",
+        keywords: "faq question answer help",
+      },
+    },
+  },
   footer: {
     tagline: "We came together to build software that could change the world.",
     site: "Site",

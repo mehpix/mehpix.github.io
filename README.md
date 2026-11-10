@@ -4,7 +4,8 @@ MehPiX'in resmi web sitesi. Stüdyonun projelerini (PyAI, Quiz), iş birliklerin
 ekibin kişisel sitelerini ve iletişim bilgilerini tanıtır.
 
 - **Yayın adresi:** https://mehpix.github.io
-- **Durum:** Faz 5 tamamlandı — tüm sayfalar Türkçe ve İngilizce yayında; PyAI ve Quiz indirilebiliyor.
+- **Durum:** Faz 6 tamamlandı — tüm sayfalar Türkçe ve İngilizce yayında; PyAI ve Quiz indirilebiliyor;
+  site içi arama (⌘K / Ctrl+K) çalışıyor.
   Bileşen vitrini: https://mehpix.github.io/tasarim (arama motorlarına kapalı).
   Planın tamamı için [ROADMAP.md](ROADMAP.md) dosyasına bakın.
 
@@ -45,6 +46,18 @@ Proje dosyaları sitenin reposunda değil, her projenin kendi reposunun **Releas
 Sitedeki "İndir" butonları `releases/latest/download/<dosya>` adresini kullanır, yani her zaman en
 yeni sürüme gider. Yeni bir sürüm yayınlandığında yalnızca [app/data/projects.ts](app/data/projects.ts)
 içindeki `version`, `size` ve `sha256` değerleri güncellenir (SHA-256 sayfada doğrulama için gösterilir).
+
+## Site içi arama
+
+Menüdeki **Ara** butonu veya **⌘K / Ctrl+K** kısayolu arama penceresini açar. Sayfalar,
+projeler ve SSS soruları aranır; her şey tarayıcıda çalışır, sunucu veya dış servis yoktur.
+
+- Arama içeriği o anki dilin sözlüğünden otomatik üretilir ([app/lib/search.ts](app/lib/search.ts)).
+  Yeni bir SSS sorusu veya proje eklendiğinde aramaya kendiliğinden girer.
+- Sayfa başlıkları, kısa açıklamaları ve ek anahtar kelimeleri sözlüklerdeki `search.pages` altındadır.
+- Arama Türkçe karakterlere duyarsızdır ("baglanti" yazan "Bağlantı"yı bulur).
+- Bir SSS sonucu seçilince SSS sayfası o soruya kayar ve soruyu açık getirir (`/sss#sss-...`).
+- Pencere tarayıcının `<dialog>` öğesiyle yapılmıştır: ↑↓ ile gezilir, Enter ile açılır, Esc ile kapanır.
 
 ## Ortam değişkenleri (.env)
 
@@ -128,6 +141,7 @@ app/
   data/            Proje bilgileri (kategori, durum, detay sayfası)
   lib/paths.ts     Tüm sayfaların TR/EN adresleri
   lib/meta.ts      Sayfa başlığı, açıklama ve dil alternatifleri
+  lib/search.ts    Site içi arama (indeks ve eşleştirme)
   lib/site.ts      İletişim e-postası ve dış bağlantılar
   lib/theme.ts     Koyu/açık tema yönetimi
   i18n/            Türkçe ve İngilizce metinler
