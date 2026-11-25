@@ -51,7 +51,7 @@ export const en: Dictionary = {
       home: {
         title: "Home",
         text: "MehPiX software studio: projects, values, roadmap and partnerships.",
-        keywords: "home mehpix roadmap values numbers partnerships microcore mehbur07 personal sites",
+        keywords: "home mehpix roadmap values numbers partnerships microcore mehbur07 lopix personal sites",
       },
       projects: {
         title: "Projects",
@@ -207,6 +207,7 @@ export const en: Dictionary = {
       personal: "Personal sites",
       microcore: "Game, app and innovation studio.",
       mehbur: "A live personal site from our team.",
+      lopix: "A personal site featuring game and software projects.",
       partner: "Partner",
     },
     faq: {

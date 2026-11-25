@@ -24,3 +24,4 @@ sürümler [Semantic Versioning](https://semver.org/lang/tr/) kurallarını izle
 - Tarayıcıların eski "ikon yok" kaydını tutup sekmede boş küre göstermesi düzeltildi: ikon adreslerine sürüm eki (`?v=2`) eklendi.
 - Hakkımızda sayfasına paylaşım paragrafı eklendi: Quiz'in MIT lisanslı açık kaynak olduğu, PyAI'ın ücretsiz indirilebildiği yazıyor.
 - Sayfaların arka planına neon `</>` ikonlarından oluşan hareketli bir ağ eklendi: ikonlar yavaşça dolaşıyor, birbirine yaklaşanlar ince çizgilerle bağlanıyor.
+- Ana sayfadaki "Kişisel siteler" bölümüne ve footer'a LopiX'in sitesi (lopixsite.github.io) logosuyla eklendi.

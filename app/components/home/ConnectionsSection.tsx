@@ -33,17 +33,30 @@ export function ConnectionsSection() {
           />
         </Group>
         <Group title={s.personal}>
-          <LinkCard
-            href={LINKS.mehbur07}
-            logo="/images/mehbur-logo.webp"
-            name="mehbur07-site"
-            body={s.mehbur}
-            badge={
-              <Badge tone="success" dot>
-                {t.status.live}
-              </Badge>
-            }
-          />
+          <div className="space-y-4">
+            <LinkCard
+              href={LINKS.mehbur07}
+              logo="/images/mehbur-logo.webp"
+              name="mehbur07-site"
+              body={s.mehbur}
+              badge={
+                <Badge tone="success" dot>
+                  {t.status.live}
+                </Badge>
+              }
+            />
+            <LinkCard
+              href={LINKS.lopix}
+              logo="/images/lopix-logo.webp"
+              name="LopiX"
+              body={s.lopix}
+              badge={
+                <Badge tone="success" dot>
+                  {t.status.live}
+                </Badge>
+              }
+            />
+          </div>
         </Group>
       </div>
     </Section>
