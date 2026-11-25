@@ -92,6 +92,9 @@ Pull Request'lerde aynı kontroller çalışır ama yayın yapılmaz.
   (`/tasarim` hariç tüm sayfalar) ve GitHub Pages'in 404 sayfası (`404.html`) üretilir.
 - [public/robots.txt](public/robots.txt) arama motorlarına site haritasının yerini gösterir.
 - Sekme ikonu `public/favicon.ico`, telefon ana ekranı ikonu `public/apple-touch-icon.png`.
+  Logo değişince bu ikonları yeniden üretip [app/root.tsx](app/root.tsx) içindeki
+  `ICON_VERSION` sayısını, paylaşım görseli değişince de `app/lib/meta.ts` içindeki
+  `?v=` sayısını artırın; yoksa tarayıcılar ve sosyal medya eski görseli göstermeye devam eder.
 - Görseller WebP formatındadır (her biri 60 KB'ın altında); yeni görsel eklerken de WebP kullanın.
 
 ## Dil desteği
