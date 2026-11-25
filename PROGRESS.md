@@ -1,5 +1,21 @@
 # İlerleme Notları
 
+### [2026-11-25 - Mehbur07]
+- **Yapılanlar & Kararlar:**
+  - Kullanıcının istediği MPX logosu 1 MB altına indirildi (masaüstü: `mpx-logo-1mb.jpg` 364 KB, GitHub org avatarı için kare `mpx-logo-kare.jpg` 123 KB) — repoya girmedi
+  - `feature/lopix-site`: "Kişisel siteler" grubuna LopiX kartı (https://lopixsite.github.io/, "Yayında" rozeti) eklendi; logo 160×160 WebP (`public/images/lopix-logo.webp`, ~5 KB)
+  - `LINKS.lopix`, footer dış bağlantılar sütunu, TR/EN kart metni ve sayfa anahtar kelimeleri güncellendi; kişisel siteler grubu iki kartı alt alta gösteriyor
+  - Kontroller: typecheck, lint, build temiz; headless Edge ile bölüm görüntüsü doğrulandı
+- **Son Commit:** c7958a7 Merge pull request #11 from mehpix/feature/code-particle-network
+- **Aktif Branch:** main
+- **Sıradaki İlk İş (Next Action):** Kullanıcı canlıda LopiX kartını, ağı ve sekme ikonunu onaylasın; sonra v1.0.0 tag'i + CHANGELOG sürüm başlığı + GitHub Release
+- **Bilinen Sorunlar / Dikkat Edilmesi Gerekenler:**
+  - GitHub org avatarı/açıklaması henüz ayarlanmadı (avatar yalnızca tarayıcıdan yüklenebilir; açıklama için kullanıcı onayı bekleniyor)
+  - PyAI kodu ileride yayınlanırsa Hakkımızda metni "Projelerimiz açık kaynaklıdır" olarak güncellenebilir
+  - PyAI logosunun arka planında anlamsız komutlar var (`Clown`, `Get-Malggle`)
+  - Dependabot: minimatch (orta) — yalnızca ESLint geliştirme aracında
+  - `.vscode/settings.json` takip edilmiyor (kullanıcının editör ayarı)
+
 ### [2026-11-10 - Mehbur07]
 - **Yapılanlar & Kararlar:**
   - PR #10 (süzülen `</>` kutucukları) yayına çıktı ama kullanıcı mehbur07 sitesindeki (m07-site) parçacık ağının aynısını, `</>` ikonuyla ve neon cyan istedi

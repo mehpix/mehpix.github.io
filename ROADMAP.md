@@ -32,6 +32,7 @@ Her faz kendi branch'inde yapılır ve Pull Request ile `main`'e girer.
 | MPX logosu | `public/images/mpx-logo.webp` | Ana sayfa; favicon ve paylaşım görseli de bundan üretildi |
 | PyAI logosu | `public/images/pyai-logo.webp` | Projeler: PyAI |
 | Mehbur07 logosu | `public/images/mehbur-logo.webp` | Kişisel siteler: mehbur07.github.io |
+| LopiX logosu | `public/images/lopix-logo.webp` | Kişisel siteler: lopixsite.github.io |
 | MicroCore logosu | `public/images/microcore-logo.png` | Düşük çözünürlük (~165 px); büyüğü gelirse değişecek |
 | Quiz logosu | `public/images/quiz-logo.webp` | Projeler: Quiz (Arduino) |
 | Quiz bağlantı tablosu | `public/images/quiz-baglanti-tablosu.png` | Sitede HTML tablo olarak da gösterilecek |
