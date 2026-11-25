@@ -11,8 +11,12 @@ export function absoluteUrl(path: string): string {
   return SITE_URL + (path === "/" ? "/" : `${path}/`);
 }
 
-/** Paylaşım önizlemelerinde (WhatsApp, X, LinkedIn...) görünen görsel. */
-const OG_IMAGE = { url: `${SITE_URL}/og-image.jpg`, width: "1200", height: "630" };
+/**
+ * Paylaşım önizlemelerinde (WhatsApp, X, LinkedIn...) görünen görsel.
+ * "?v=" eki: bu uygulamalar görseli uzun süre önbellekte tutar; görsel
+ * değiştiğinde sayıyı artırın ki yenisini indirsinler.
+ */
+const OG_IMAGE = { url: `${SITE_URL}/og-image.jpg?v=2`, width: "1200", height: "630" };
 
 /**
  * Bir sayfanın <head> bilgilerini üretir: sekme başlığı, açıklama, asıl adres

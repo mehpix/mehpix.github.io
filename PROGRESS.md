@@ -2,6 +2,26 @@
 
 ### [2026-11-25 - Mehbur07]
 - **Yapılanlar & Kararlar:**
+  - PR #12 ile LopiX kartı yayına çıktı (canlıda doğrulandı)
+  - `feature/new-mehpix-logo`: kullanıcının yeni logosu (2000×2000 PNG, camgöbeği zemin) her yere uygulandı
+  - Ana sayfa görseli `mpx-logo.webp` 1024×1024 kare oldu (tam logo + yazılar, ~22 KB); Hero `width/height` 1024
+  - Favicon (16/32/48) ve 180 px telefon ikonu yalnızca işaretten (MPX + yıldız + kavis) üretildi; küçük boyutta yazılar okunmadığı için yazılar dahil edilmedi
+  - `og-image.jpg` 1200×630 camgöbeği zemin + ortada tam logo
+  - Önbellek kırma: `ICON_VERSION` 2 → 3, paylaşım görseline `?v=2`; README'ye "logo değişince sayıları artır" notu
+  - Menü/footer'daki `Wordmark` (CSS ile neon "MPX" yazısı) değiştirilmedi
+  - Kontroller: typecheck, lint, build temiz; masaüstü ve 390 px mobil görüntü doğrulandı
+- **Son Commit:** 0c57b1b Merge pull request #12 from mehpix/feature/lopix-site
+- **Aktif Branch:** main
+- **Sıradaki İlk İş (Next Action):** Kullanıcı canlıda yeni logoyu onaylasın; sonra v1.0.0 tag'i + CHANGELOG sürüm başlığı + GitHub Release
+- **Bilinen Sorunlar / Dikkat Edilmesi Gerekenler:**
+  - Yeni logo düz camgöbeği/siyah; sitenin neon koyu temasıyla uyumu kullanıcıya soruldu — istenirse logonun siyah/neon renkli bir versiyonu yapılabilir
+  - GitHub org avatarı hâlâ eski görselle hazırlanmıştı; yeni logoyla yeniden üretilebilir
+  - PyAI kodu ileride yayınlanırsa Hakkımızda metni "Projelerimiz açık kaynaklıdır" olarak güncellenebilir
+  - Dependabot: minimatch (orta) — yalnızca ESLint geliştirme aracında
+  - `.vscode/settings.json` takip edilmiyor (kullanıcının editör ayarı)
+
+### [2026-11-25 - Mehbur07]
+- **Yapılanlar & Kararlar:**
   - Kullanıcının istediği MPX logosu 1 MB altına indirildi (masaüstü: `mpx-logo-1mb.jpg` 364 KB, GitHub org avatarı için kare `mpx-logo-kare.jpg` 123 KB) — repoya girmedi
   - `feature/lopix-site`: "Kişisel siteler" grubuna LopiX kartı (https://lopixsite.github.io/, "Yayında" rozeti) eklendi; logo 160×160 WebP (`public/images/lopix-logo.webp`, ~5 KB)
   - `LINKS.lopix`, footer dış bağlantılar sütunu, TR/EN kart metni ve sayfa anahtar kelimeleri güncellendi; kişisel siteler grubu iki kartı alt alta gösteriyor

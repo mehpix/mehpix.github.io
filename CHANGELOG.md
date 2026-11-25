@@ -25,3 +25,4 @@ sürümler [Semantic Versioning](https://semver.org/lang/tr/) kurallarını izle
 - Hakkımızda sayfasına paylaşım paragrafı eklendi: Quiz'in MIT lisanslı açık kaynak olduğu, PyAI'ın ücretsiz indirilebildiği yazıyor.
 - Sayfaların arka planına neon `</>` ikonlarından oluşan hareketli bir ağ eklendi: ikonlar yavaşça dolaşıyor, birbirine yaklaşanlar ince çizgilerle bağlanıyor.
 - Ana sayfadaki "Kişisel siteler" bölümüne ve footer'a LopiX'in sitesi (lopixsite.github.io) logosuyla eklendi.
+- MehPiX'in yeni logosu (camgöbeği zemin üzerinde siyah MPX) ana sayfaya, sekme ikonuna, telefon ikonuna ve link paylaşım görseline geldi.

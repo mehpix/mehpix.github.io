@@ -26,7 +26,7 @@ import { ButtonLink } from "./components/ui/Button";
 // Sekme ikonu (favicon) ve telefon ana ekranı ikonu tüm sayfalarda geçerlidir.
 // "?v=" eki: tarayıcılar ikonları uzun süre ayrı bir önbellekte tutar. İkon
 // değiştiğinde bu sayıyı artırın; tarayıcı yeni adresi görüp ikonu yeniden indirir.
-const ICON_VERSION = 2;
+const ICON_VERSION = 3;
 export const links: Route.LinksFunction = () => [
   { rel: "icon", href: `/favicon.ico?v=${ICON_VERSION}`, sizes: "32x32" },
   { rel: "apple-touch-icon", href: `/apple-touch-icon.png?v=${ICON_VERSION}` },

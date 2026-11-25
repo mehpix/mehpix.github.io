@@ -50,8 +50,8 @@ export function Hero() {
           <img
             src="/images/mpx-logo.webp"
             alt={h.logoAlt}
-            width={1280}
-            height={698}
+            width={1024}
+            height={1024}
             fetchPriority="high"
             className="relative w-full rounded-2xl border border-line neon-box"
           />
