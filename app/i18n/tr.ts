@@ -50,7 +50,7 @@ export const tr = {
       home: {
         title: "Ana sayfa",
         text: "MehPiX yazılım stüdyosu: projeler, değerler, yol haritası ve iş birlikleri.",
-        keywords: "anasayfa mehpix yol haritası değerler rakamlar iş birlikleri microcore mehbur07 kişisel siteler",
+        keywords: "anasayfa mehpix yol haritası değerler rakamlar iş birlikleri microcore mehbur07 lopix kişisel siteler",
       },
       projects: {
         title: "Projeler",
@@ -206,6 +206,7 @@ export const tr = {
       personal: "Kişisel siteler",
       microcore: "Oyun, uygulama ve inovasyon stüdyosu.",
       mehbur: "Ekibimizin yayında olan kişisel sitesi.",
+      lopix: "Oyun ve yazılım projelerinin yer aldığı kişisel site.",
       partner: "Partner",
     },
     faq: {

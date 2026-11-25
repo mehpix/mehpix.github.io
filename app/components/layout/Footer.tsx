@@ -15,6 +15,7 @@ const SITE_LINKS = ["projects", "about", "faq", "contact"] as const satisfies re
 const EXTERNAL_LINKS = [
   { label: "MicroCore", href: LINKS.microcore },
   { label: "Mehbur07", href: LINKS.mehbur07 },
+  { label: "LopiX", href: LINKS.lopix },
   { label: "GitHub", href: LINKS.github },
 ] as const;
 
